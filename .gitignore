@@ -97,3 +97,14 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+
+# TADAK Project Specific Ignores
+*.dwlt
+.DS_Store
+Thumbs.db
+
+# Visual Stuido / Rider Pernsonal Settings
+.idea/
+*.sln.DotSettings.user
+*.suo.meta
