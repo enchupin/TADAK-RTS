@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 public static class BuildingDataBase {
-    private static readonly Dictionary<string, BuildingData> _db = new Dictionary<string, BuildingData>();
+    private static readonly Dictionary<string, BuildingData> Building_db = new Dictionary<string, BuildingData>();
 
     static BuildingDataBase() {
         LoadDataFromJson();
@@ -17,15 +17,15 @@ public static class BuildingDataBase {
 
         foreach (var item in wrapper.buildings) {
             if (item.Type == "Unit") {
-                _db.Add(item.ID, new UnitBuildingData(
+                Building_db.Add(item.ID, new UnitBuildingData(
                     item.ID, item.Type, item.Race, item.Wood, item.Rock,item.MaxHealth, item.BuildTime, item.ProducibleUnits));
             } else if (item.Type == "Resource") {
-                _db.Add(item.ID, new ResourceBuildingData(
+                Building_db.Add(item.ID, new ResourceBuildingData(
                     item.ID, item.Type, item.Race, item.Wood, item.Rock,
                     item.MaxHealth, item.BuildTime, item.ResourceType));
             }
         }
     }
 
-    public static BuildingData Get(string id) => _db.GetValueOrDefault(id);
+    public static BuildingData Get(string id) => Building_db.GetValueOrDefault(id);
 }

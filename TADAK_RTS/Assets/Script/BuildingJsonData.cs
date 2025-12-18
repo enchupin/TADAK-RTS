@@ -7,6 +7,8 @@ using System.Collections.Generic;
 public class BuildingJsonData {
     public string ID;
     public string Type;
+    // 유닛 생산 건물 "Unit"
+    // 자원 건물 "Resource"
     public Race Race;
     public int Wood;
     public int Rock;
