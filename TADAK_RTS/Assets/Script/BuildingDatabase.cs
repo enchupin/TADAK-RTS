@@ -1,34 +1,25 @@
 ﻿using System.Collections.Generic;
 
 public static class BuildingDatabase {
-    public static readonly Dictionary<string, BuildingData> Data = new Dictionary<string, BuildingData>()
-    {
-        // {"ID", new BuildingData(종족, 골드, 나무, 건설시간, 체력, 방어력, 인구제공, 생산가능 유닛 리스트)}
-        {
-            "Human_Barracks",
-            new BuildingData("", Race.Human, 150, 0, 30f, 500f, 5, 0, new List<string>{"Footman", "Archer"})
-        },
-        {
-            "Elf_Tree",
-            new BuildingData("", Race.Elf, 200, 100, 60f, 800f, 2, 10, new List<string>{"Wisp", "Ent"})
-        },
-        {
-            "Undead_Grave",
-            new BuildingData("", Race.Undead, 100, 50, 20f, 400f, 3, 0, new List<string>{"Skeleton"})
-        },
-        {
-            "Beastman_Den",
-            new BuildingData("", Race.Beastman, 120, 20, 25f, 600f, 8, 0, new List<string>{"Wolfman"})
-        }
-    };
+    private static readonly Dictionary<string, BuildingData> _db = new Dictionary<string, BuildingData>();
 
-          
+    static BuildingDatabase() {
+        // 아이디, 종족, int 소모 골드, float 체력, float 방어력, int 인구수 공급량, List<string> 생산 가능 유닛
+        Add("Human_Barracks", Race.Human, 150, 500f, 0f, 0, null);
+        Add("Elf_Tree", Race.Elf, 200, 800f, 0f, 0, null);
+        Add("Orc_Den", Race.Beastman, 120, 600f, 0f, 0, null);
+
+
+
+
+
+    }
+
+    private static void Add(string id, Race race, int gold, float hp, float armor, float supplyprovided, List<string> producibleUnits) {
+        _db.Add(id, new BaseBuildingData(id, race, gold, hp, armor, supplyprovided, producibleUnits));
+    }
+
     public static BuildingData Get(string id) {
-        if (Data.TryGetValue(id, out BuildingData building)) {
-            return building;
-        }
-
-        UnityEngine.Debug.LogError($"Building ID '{id}' Get Failed Error.");
-        return null;
+        return _db.TryGetValue(id, out var data) ? data : null;
     }
 }

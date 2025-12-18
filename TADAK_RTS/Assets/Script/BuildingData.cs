@@ -1,28 +1,27 @@
+ï»¿using NUnit.Framework;
+using System.Diagnostics;
 using System.Collections.Generic;
 
 public enum Race { Human, Elf, Beastman, Undead }
 
-public class BuildingData {
-    public string Name;
-    public Race Race;
-    public int Gold;
-    public int Wood;
-    public float BuildTime;
-    public float MaxHealth;
-    public int Armor;
-    public int SupplyProvided;
-    public List<string> ProducibleUnits;
 
-    // »ý¼ºÀÚ
-    public BuildingData(string name, Race race, int gold, int wood, float time, float health, int armor, int supply, List<string> units) {
-        Name = name;
-        Race = race;
-        Gold = gold;
-        Wood = wood;
-        BuildTime = time;
-        MaxHealth = health;
-        Armor = armor;
-        SupplyProvided = supply;
-        ProducibleUnits = units;
+public abstract class BuildingData {
+    public string ID { get; protected set; }
+    public Race Race { get; protected set; }
+    public int Gold { get; protected set; }
+    public float MaxHealth { get; protected set; }
+    public float BuildTime {get; protected set; }
+
+    public float Armor {get; protected set; }
+    public float SupplyProvided {get; protected set; }
+    public List<string> ProducibleUnits { get; protected set; }
+
+
+}
+
+
+public class BaseBuildingData : BuildingData {
+    public BaseBuildingData(string id, Race race, int gold, float hp, float armor, float supplyprovided, List<string> producibleUnits) {
+        ID = id; Race = race; Gold = gold; MaxHealth = hp; Armor = armor; SupplyProvided = supplyprovided; ProducibleUnits = producibleUnits;
     }
 }
