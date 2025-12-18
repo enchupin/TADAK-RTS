@@ -18,11 +18,11 @@ public static class BuildingDataBase {
         foreach (var item in wrapper.buildings) {
             if (item.Type == "Unit") {
                 _db.Add(item.ID, new UnitBuildingData(
-                    item.ID, item.Race, item.Type, item.Wood, item.Rock,item.MaxHealth, item.BuildTime, item.ProducibleUnits));
+                    item.ID, item.Type, item.Race, item.Wood, item.Rock,item.MaxHealth, item.BuildTime, item.ProducibleUnits));
             } else if (item.Type == "Resource") {
                 _db.Add(item.ID, new ResourceBuildingData(
-                    item.ID, item.Race, item.Type, item.Wood, item.Rock,
-                    item.MaxHealth, item.BuildTime, item.ResourceType, item.AmountPerTick));
+                    item.ID, item.Type, item.Race, item.Wood, item.Rock,
+                    item.MaxHealth, item.BuildTime, item.ResourceType));
             }
         }
     }
