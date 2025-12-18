@@ -9,10 +9,6 @@ public static class BuildingDatabase {
         Add("Elf_Tree", Race.Elf, 200, 200, 800f, 0f);
         Add("Orc_Den", Race.Beastman, 120, 120, 600f, 0f);
 
-
-
-
-
     }
 
     private static void Add(string id, Race race, int wood, int rock, float hp, float buildTime) {
@@ -22,4 +18,16 @@ public static class BuildingDatabase {
     public static BuildingData Get(string id) {
         return _db.TryGetValue(id, out var data) ? data : null;
     }
+}
+
+// 자원 건물
+public interface IResourceGenerator {
+    string ResourceType { get; }
+    int AmountPerTick { get; }
+}
+
+// 유닛 생산 건물
+public interface IUnitProducer {
+    List<string> ProducibleUnits { get; }
+    void Produce(string unitName);
 }
