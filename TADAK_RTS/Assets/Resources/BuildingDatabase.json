@@ -1,0 +1,19 @@
+{
+  "buildings": [
+    {
+      "ID": "Human_Barracks",
+      "Type": "Unit",
+      "Race": 0,
+      "Wood": 150,
+      "Rock": 150,
+      "MaxHealth": 500.0,
+      "BuildTime": 15.0,
+      "ProducibleUnits": ["Footman", "Archer"]
+    },
+
+    {
+      "ID": "Human_Mine", "Type": "Resource", "Race": 0, "Wood": 100, "Rock": 100,
+      "MaxHealth": 300.0, "BuildTime": 10.0, "ResourceType": "Gold", "AmountPerTick": 10
+    }
+  ]
+}

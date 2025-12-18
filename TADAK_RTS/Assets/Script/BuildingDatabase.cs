@@ -1,33 +1,31 @@
-﻿using System.Collections.Generic;
+﻿using UnityEngine;
+using System.Collections.Generic;
 
-public static class BuildingDatabase {
+public static class BuildingDataBase {
     private static readonly Dictionary<string, BuildingData> _db = new Dictionary<string, BuildingData>();
 
-    static BuildingDatabase() {
-        // 아이디, 종족, int 소모 목재, int 소모 석재, float 체력, 건설시간
-        Add("Human_Barracks", Race.Human, 150, 150, 500f, 15f);
-        Add("Elf_Tree", Race.Elf, 200, 200, 800f, 0f);
-        Add("Orc_Den", Race.Beastman, 120, 120, 600f, 0f);
-
+    static BuildingDataBase() {
+        LoadDataFromJson();
     }
 
-    private static void Add(string id, Race race, int wood, int rock, float hp, float buildTime) {
-        _db.Add(id, new BaseBuildingData(id, race, wood, rock, hp, buildTime));
+    private static void LoadDataFromJson() {
+        // Resources 폴더에서 BuildingDatabase_json.json 파일을 읽어옴
+        TextAsset jsonFile = Resources.Load<TextAsset>("BuildingDatabase_json");
+        if (jsonFile == null) return;
+
+        BuildingDataWrapper wrapper = JsonUtility.FromJson<BuildingDataWrapper>(jsonFile.text);
+
+        foreach (var item in wrapper.buildings) {
+            if (item.Type == "Unit") {
+                _db.Add(item.ID, new UnitBuildingData(
+                    item.ID, item.Race, item.Type, item.Wood, item.Rock,item.MaxHealth, item.BuildTime, item.ProducibleUnits));
+            } else if (item.Type == "Resource") {
+                _db.Add(item.ID, new ResourceBuildingData(
+                    item.ID, item.Race, item.Type, item.Wood, item.Rock,
+                    item.MaxHealth, item.BuildTime, item.ResourceType, item.AmountPerTick));
+            }
+        }
     }
 
-    public static BuildingData Get(string id) {
-        return _db.TryGetValue(id, out var data) ? data : null;
-    }
-}
-
-// 자원 건물
-public interface IResourceGenerator {
-    string ResourceType { get; }
-    int AmountPerTick { get; }
-}
-
-// 유닛 생산 건물
-public interface IUnitProducer {
-    List<string> ProducibleUnits { get; }
-    void Produce(string unitName);
+    public static BuildingData Get(string id) => _db.GetValueOrDefault(id);
 }
