@@ -15,16 +15,23 @@ public static class BuildingDataBase {
 
         BuildingDataWrapper wrapper = JsonUtility.FromJson<BuildingDataWrapper>(jsonFile.text);
 
-        foreach (var item in wrapper.buildings) {
+        if (wrapper == null || wrapper.buildingDatabase_json == null) {
+            Debug.LogError("JSON 파싱 실패: 구조를 확인하세요.");
+            return;
+        }
+
+        foreach (var item in wrapper.buildingDatabase_json) {
             if (item.Type == "Unit") {
                 Building_db.Add(item.ID, new UnitBuildingData(
-                    item.ID, item.Type, item.Race, item.Wood, item.Rock,item.MaxHealth, item.BuildTime, item.ProducibleUnits));
+                    item.ID, item.Type, item.Race, item.Wood, item.Rock,
+                    item.MaxHealth, item.BuildTime, item.ProducibleUnits));
             } else if (item.Type == "Resource") {
                 Building_db.Add(item.ID, new ResourceBuildingData(
                     item.ID, item.Type, item.Race, item.Wood, item.Rock,
                     item.MaxHealth, item.BuildTime, item.ResourceType));
             }
         }
+
     }
 
     public static BuildingData Get(string id) => Building_db.GetValueOrDefault(id);

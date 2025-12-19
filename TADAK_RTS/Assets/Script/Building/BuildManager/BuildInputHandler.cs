@@ -1,23 +1,31 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+
 
 public class BuildInputHandler : MonoBehaviour {
-
-    private string userName = "Player1"; // 임시 이름
-
+    private string userName = "Player1";
     void Update() {
-        // 위치 갱신 요청
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        // 마우스 위치 업데이트
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+        Ray ray = Camera.main.ScreenPointToRay(mousePos);
+
+
+        // 조건 추후 변경
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, LayerMask.GetMask("Map"))) {
             BuildManager.Instance.UpdateGhost(hit.point, userName);
         }
 
-        // 설치 요청
-        if (Input.GetMouseButtonDown(0)) {
-            BuildManager.Instance.ConfirmPlacement(userName);
+        // 건설 확정
+        if (Mouse.current.leftButton.wasPressedThisFrame) {
+            // _ = 키워드로 "실행 후 기다리지 않음"을 명시
+            _ = BuildManager.Instance.ConfirmPlacement(userName);
         }
 
-        // 취소 요청
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        // 건설 모드 취소
+        if (Keyboard.current.escapeKey.wasPressedThisFrame) {
             BuildManager.Instance.ClearMode();
         }
     }
