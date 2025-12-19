@@ -438,7 +438,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 968077228}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6415149282167434008}
+        m_TargetAssemblyTypeName: BuildingPanelUI, Assembly-CSharp
+        m_MethodName: OnClickBuildingButton
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Human_Barracks
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &968077228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,7 +546,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: BuildTest
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1087,6 +1099,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6652223674377116456, guid: 08cd6521aff5d9a45bc6683a20668051, type: 3}
   m_PrefabInstance: {fileID: 6415149282167434006}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6415149282167434008 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 395907477634000924, guid: 08cd6521aff5d9a45bc6683a20668051, type: 3}
+  m_PrefabInstance: {fileID: 6415149282167434006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df150156c5c085408adae074823fd23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuildingPanelUI
 --- !u!1001 &7144510217821161317
 PrefabInstance:
   m_ObjectHideFlags: 0
