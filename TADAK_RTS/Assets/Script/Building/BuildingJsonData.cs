@@ -25,5 +25,5 @@ public class BuildingJsonData {
 
 [System.Serializable]
 public class BuildingDataWrapper {
-    public List<BuildingJsonData> buildings;
+    public List<BuildingJsonData> buildingDatabase_json;
 }

@@ -1,7 +1,7 @@
 {
   "buildingDatabase_json": [
     {
-      "ID": "Human_barracks",
+      "ID": "Human_Barracks",
       "Type": "Unit",
       "Race": 0,
       "Wood": 150,
