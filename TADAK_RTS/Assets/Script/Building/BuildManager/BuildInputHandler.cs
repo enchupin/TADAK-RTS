@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.InputSystem; // 추가
+using UnityEngine.InputSystem;
 
 
 
@@ -12,6 +12,8 @@ public class BuildInputHandler : MonoBehaviour {
         Vector2 mousePos = Mouse.current.position.ReadValue();
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
 
+
+        // 조건 추후 변경
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, LayerMask.GetMask("Map"))) {
             BuildManager.Instance.UpdateGhost(hit.point, userName);
         }
