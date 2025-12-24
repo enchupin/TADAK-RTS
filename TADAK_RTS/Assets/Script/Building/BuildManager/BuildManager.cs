@@ -19,7 +19,7 @@ public class BuildManager : MonoBehaviour {
             // 데이터와 에셋 로딩을 병렬로 처리하거나 순차적으로 처리
             // 데이터 가져오기 (JSON 기반)
             selectedData = BuildingDataBase.Get(id);
-
+            Debug.Log($"Request ID: {id}");
             if (selectedData == null) {
                 Debug.LogError($"[BuildManager] {id}에 해당하는 데이터가 JSON에 없습니다.");
                 return;
