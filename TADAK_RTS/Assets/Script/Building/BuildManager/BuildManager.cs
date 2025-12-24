@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 public class BuildManager : MonoBehaviour {
     public static BuildManager Instance { get; private set; }
 
-    [SerializeField] private BuildInputHandler inputHandler;
+    [SerializeField] private GameObject inputHandler;
     private BuildingData selectedData;
     private BuildPreview preview;
     private GameObject loadedPrefab;
@@ -19,7 +19,6 @@ public class BuildManager : MonoBehaviour {
             // 데이터와 에셋 로딩을 병렬로 처리하거나 순차적으로 처리
             // 데이터 가져오기 (JSON 기반)
             selectedData = BuildingDataBase.Get(id);
-            Debug.Log($"Request ID: {id}");
             if (selectedData == null) {
                 Debug.LogError($"[BuildManager] {id}에 해당하는 데이터가 JSON에 없습니다.");
                 return;
@@ -53,7 +52,7 @@ public class BuildManager : MonoBehaviour {
     private void InitializeBuildPreview(GameObject prefab) {
         preview?.Destroy();
         preview = new BuildPreview(prefab);
-        inputHandler.enabled = true;
+        inputHandler.SetActive(true);
     }
 
     // 건설 확정 메서드
@@ -77,6 +76,6 @@ public class BuildManager : MonoBehaviour {
         preview?.Destroy();
         preview = null;
         selectedData = null;
-        inputHandler.enabled = false;
+        inputHandler.SetActive(false);
     }
 }

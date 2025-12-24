@@ -10,7 +10,11 @@ public class BuildPreview {
         renderers = ghostObject.GetComponentsInChildren<Renderer>();
     }
 
-    public void SetPosition(Vector3 position) => ghostObject.transform.position = position;
+    public void SetPosition(Vector3 position) {
+        if (ghostObject == null)
+            return;
+        ghostObject.transform.position = position;
+    }
 
     public void UpdateVisual(bool canPlace) {
         // 가능하면 초록, 아니면 빨강으로 설정
