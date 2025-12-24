@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 630320361}
   - component: {fileID: 630320360}
   - component: {fileID: 630320359}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TestMap1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,6 +489,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968077225}
   m_CullTransparentMesh: 1
+--- !u!1 &993441602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1808339690168008542, guid: 08cd6521aff5d9a45bc6683a20668051, type: 3}
+  m_PrefabInstance: {fileID: 6415149282167434006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1179601130
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,7 +551,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BuildTest
+  m_text: Human_Barrakcs_Test
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1045,6 +1050,10 @@ PrefabInstance:
       propertyPath: buildPanel
       value: 
       objectReference: {fileID: 1188707210}
+    - target: {fileID: 5350674835035478968, guid: 08cd6521aff5d9a45bc6683a20668051, type: 3}
+      propertyPath: inputHandler
+      value: 
+      objectReference: {fileID: 993441602}
     - target: {fileID: 6595694222785151121, guid: 08cd6521aff5d9a45bc6683a20668051, type: 3}
       propertyPath: m_Name
       value: BuildingManager
