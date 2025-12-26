@@ -104,6 +104,7 @@ InitTestScene*.unity*
 *.dwlt
 .DS_Store
 Thumbs.db
+*.slnx
 
 # Visual Stuido / Rider Pernsonal Settings
 .idea/
