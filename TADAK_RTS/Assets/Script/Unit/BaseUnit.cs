@@ -1,16 +1,23 @@
-﻿public abstract class BaseUnit : IOwnable {
-    public string OwnerName { get; set; }
-    public bool IsOwnedBy(string name) {
+﻿using System;
 
-        return true; // 본인 소유일 때만 true 반환하도록 수정
+
+
+public interface IDead {
+    // 유닛이 죽었을 때 외부에 알릴 이벤트
+    event Action<BaseUnit> OnDead;
+    void Die();
+}
+public abstract class BaseUnit : IOwnable, IDead {
+    public string UnitName { get; set; }
+    public string OwnerName { get; set; }
+    public Race Race { get; set; }
+
+    public event Action<BaseUnit> OnDead;
+    public virtual void Die() {
+        OnDead?.Invoke(this);
     }
 
 
 
-    // 유닛 관련 프로퍼티 추가
-
-    // 예시
-    // float MaxHelath { get; set; }
-    // float MaxMana { get; set; }
-
+    public bool IsOwnedBy(string name) => OwnerName == name;
 }
