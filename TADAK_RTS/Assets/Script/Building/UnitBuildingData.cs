@@ -8,7 +8,7 @@ public interface IUnitProducer {
 }
 
 // 유닛 생산 건물 데이터 클래스
-public class UnitBuildingData : BuildingData, IUnitProducer {
+public class UnitBuildingData : BaseBuilding, IUnitProducer {
     public List<string> ProducibleUnits { get; private set; }
 
     public UnitBuildingData(string id, string type, Race race, int wood, int rock, float hp, float time, List<string> units) {

@@ -4,7 +4,7 @@ public interface IResourceGenerator {
     string ResourceType { get; }
 }
 // 자원 채취 건물 데이터 클래스
-public class ResourceBuildingData : BuildingData, IResourceGenerator {
+public class ResourceBuildingData : BaseBuilding, IResourceGenerator {
     public string ResourceType { get; private set; }
 
     public ResourceBuildingData(string id, string type, Race race, int wood, int rock, float hp, float time, string resType) {
