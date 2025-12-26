@@ -1,27 +1,23 @@
-﻿using UnityEngine;
-
+﻿
 public enum OccupationState { Neutral, Capturing, Occupied }
 public interface ICapturable {
-
-    OccupationState State { get; }
-    void UpdateCaptureProgress(string capturerUsername, float amount);
+    OccupationState State { get; set; }
     bool IsOccupiedBy(string username);
 }
 
-
-
 public class CapturableMap : Map, ICapturable, IOwnable {
-
+    private CaptureProcessor _captureProcessor;
     public string OwnerName { get; set; }
+    public OccupationState State { get; set; }
     public bool IsOwnedBy(string username) {
         return (username == OwnerName);
     }
-    public OccupationState State => OccupationState.Neutral;
-
+    
 
     private void Awake() {
         sectorName = gameObject.name; // 오브젝트 이름을 섹터 이름으로 사용
         sectorID = gameObject.GetInstanceID();
+        _captureProcessor = new CaptureProcessor(this);
     }
 
     public bool IsOccupiedBy(string username) {
