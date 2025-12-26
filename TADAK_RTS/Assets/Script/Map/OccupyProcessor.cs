@@ -1,32 +1,32 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class CaptureProcessor {
+public class OccupyProcessor {
 
     private const float MAX_PROGRESS_RATE = 100f;
-    private const float CAPTURE_TIME_SECONDS = 10f; // 점령까지 걸리는 시간
-    private const float CAPTURE_SPEED = MAX_PROGRESS_RATE / CAPTURE_TIME_SECONDS; // 초당 점령 수치
+    private const float OCCUPY_TIME_SECONDS = 10f; // 점령까지 걸리는 시간
+    private const float OCCUPY_SPEED = MAX_PROGRESS_RATE / OCCUPY_TIME_SECONDS; // 초당 점령 수치
 
-    private CapturableMap _capturableMap;
-    public CaptureProcessor (CapturableMap capturableMap) { _capturableMap = capturableMap; }
+    private OccupiableMap _occupiableMap;
+    public OccupyProcessor (OccupiableMap occupiableMap) { _occupiableMap = occupiableMap; }
     public OccupationState State {
-        get => _capturableMap.State;
-        set => _capturableMap.State = value;
+        get => _occupiableMap.State;
+        set => _occupiableMap.State = value;
     }
-    private List<string> _unitsInRange = new List<string>();
+    private List<BaseUnit> unitsInRange = new List<BaseUnit>();
     public float ProgressRate;
-    public string CapturingUserName;
+    public string OccupyingUserName;
 
     public void UpdateCaptureProgress() {
-        if (!IsCapturable()) { // 본인이 점령 가능하지 않다면
+        if (!IsOccupiable()) { // 본인이 점령 가능하지 않다면
             return;
         }
 
-        ProgressRate += CAPTURE_SPEED * Time.deltaTime;
+        ProgressRate += OCCUPY_SPEED * Time.deltaTime;
 
         if (ProgressRate >= MAX_PROGRESS_RATE) {
             State = OccupationState.Occupied;
-            _capturableMap.OwnerName = CapturingUserName;
+            _occupiableMap.OwnerName = OccupyingUserName;
         }
     }
 
@@ -35,7 +35,7 @@ public class CaptureProcessor {
         State = OccupationState.Neutral;
     }
 
-    public bool IsCapturable() {
+    public bool IsOccupiable() {
 
 
 
@@ -49,7 +49,7 @@ public class CaptureProcessor {
 
         if (candidate != null) {
             // 점령 주체가 바뀌었을 때만 딱 한 번 설정
-            CapturingUserName = candidate;
+            OccupyingUserName = candidate;
         } else {
             // 아무도 없으면 중단 로직 실행
             CancelProcess();
