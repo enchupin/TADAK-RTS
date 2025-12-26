@@ -12,12 +12,15 @@ public class OccupiableMap : Map, IOccupiable, IOwnable {
     public bool IsOwnedBy(string username) {
         return (username == OwnerName);
     }
-    
+
+
+
 
     private void Awake() {
         sectorName = gameObject.name; // 오브젝트 이름을 섹터 이름으로 사용
         sectorID = gameObject.GetInstanceID();
         _occupyProcessor = new OccupyProcessor(this);
+        unitTracker.OnRegistryChanged += HandleUnitCountChanged;
     }
 
     public bool IsOccupiedBy(string username) {
@@ -29,5 +32,8 @@ public class OccupiableMap : Map, IOccupiable, IOwnable {
         // 점령 진행
     }
 
+    private void HandleUnitCountChanged() {
+        // 점령 로직 등을 실행
+    }
 
 }

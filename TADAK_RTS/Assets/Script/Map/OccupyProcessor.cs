@@ -13,7 +13,6 @@ public class OccupyProcessor {
         get => _occupiableMap.State;
         set => _occupiableMap.State = value;
     }
-    private List<BaseUnit> unitsInRange = new List<BaseUnit>();
     public float ProgressRate;
     public string OccupyingUserName;
 
