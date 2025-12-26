@@ -1,4 +1,4 @@
 ﻿public interface IOwnable {
-    string OwnerName { get; }
+    string OwnerName { get; set; }
     bool IsOwnedBy(string username);
 }
