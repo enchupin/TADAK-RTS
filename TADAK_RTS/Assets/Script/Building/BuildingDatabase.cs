@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 public static class BuildingDataBase {
-    private static readonly Dictionary<string, BuildingData> Building_db = new Dictionary<string, BuildingData>();
+    private static readonly Dictionary<string, BaseBuilding> Building_db = new Dictionary<string, BaseBuilding>();
 
     static BuildingDataBase() {
         LoadDataFromJson();
@@ -34,5 +34,5 @@ public static class BuildingDataBase {
 
     }
 
-    public static BuildingData Get(string id) => Building_db.GetValueOrDefault(id);
+    public static BaseBuilding Get(string id) => Building_db.GetValueOrDefault(id);
 }

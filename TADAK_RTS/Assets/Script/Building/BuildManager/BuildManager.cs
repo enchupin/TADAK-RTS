@@ -5,7 +5,7 @@ public class BuildManager : MonoBehaviour {
     public static BuildManager Instance { get; private set; }
 
     [SerializeField] private GameObject inputHandler;
-    private BuildingData selectedData;
+    private BaseBuilding selectedData;
     private BuildPreview preview;
     private GameObject loadedPrefab;
     private readonly IPlacementValidator validator = new OccupationValidator();
