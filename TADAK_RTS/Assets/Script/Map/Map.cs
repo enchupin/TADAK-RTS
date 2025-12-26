@@ -10,7 +10,4 @@ public abstract class Map : MonoBehaviour {
     [Header("Sector Info")]
     protected string sectorName;
     protected int sectorID;
-    protected UnitTracker unitTracker = new UnitTracker();
-
-    public IUnitMeasurable UnitRegistry => unitTracker;
 }
