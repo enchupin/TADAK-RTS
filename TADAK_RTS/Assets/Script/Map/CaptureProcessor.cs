@@ -1,18 +1,37 @@
-﻿public class CaptureProcessor {
-    private const float MAXPROGRESS = 100f;
+﻿
 
-    public void Process(CaptureState state, string capturer, float amount) {
-        if (state.State == OccupationState.Occupied && state.Owner == capturer) return;
+public interface ICaptureProcessor {
 
-        // 점령 진행도 증가
-        state.CaptureProgress += amount;
-        state.State = OccupationState.Capturing;
+    const float MaxProgressRate = 100f;
+    string CapturingUserName { get; set; }
+    float CurrentProgressRate { get; set; }
+    void Process(OccupationState state, float captureStat);
 
-        // 완료
-        if (state.CaptureProgress >= MAXPROGRESS) {
-            state.Owner = capturer;
-            state.State = OccupationState.Occupied;
-            state.CaptureProgress = MAXPROGRESS;
-        }
+    void CancelProcess();
+    bool IsCapturable();
+}
+
+public class CaptureProcessor : ICaptureProcessor {
+    public string CapturingUserName { get; set; }
+    public float CurrentProgressRate { get; set; }
+    public void Process(OccupationState state, float captureStat) {
+        if (!IsCapturable()) // 본인이 점령 가능하면
+            return;
+
     }
+
+    public void CancelProcess() {
+
+    
+    
+    }
+
+    public bool IsCapturable() {
+
+        // 본인의 유닛만 있을 때 true 아니면 false
+        return true;
+    }
+
+
+
 }
