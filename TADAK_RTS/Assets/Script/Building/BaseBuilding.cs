@@ -4,7 +4,6 @@ public enum Race { Human, Elf, Beastman, Undead }
 // 건물 데이터 클래스
 public abstract class BaseBuilding : IOwnable {
     public string ID { get; protected set; }
-    public string Type { get; protected set; }
     public Race Race { get; protected set; }
     public int Wood { get; protected set; }
     public int Rock { get; protected set; }
@@ -12,6 +11,23 @@ public abstract class BaseBuilding : IOwnable {
     public float BuildTime { get; protected set; }
 
     public string OwnerName { get; set; }
+
+    protected BaseBuilding(BuildingJsonData data) {
+        this.ID = data.ID;
+        this.Race = data.Race;
+        this.Wood = data.Wood;
+        this.Rock = data.Rock;
+        this.MaxHealth = data.MaxHealth;
+        this.BuildTime = data.BuildTime;
+
+        // 추후 this.OwnerName 받아오는 코드 구현
+
+    }
+
+
+
+
+
 
 
     public bool IsOwnedBy(string username) {
@@ -21,11 +37,4 @@ public abstract class BaseBuilding : IOwnable {
     }
 
 
-}
-
-
-public class BaseBuildingData : BaseBuilding {
-    public BaseBuildingData(string id, string type, Race race,  int wood, int rock, float hp, float buildTime) {
-        ID = id; Type = type; Race = race; Wood = wood; Rock = rock; MaxHealth = hp; BuildTime = buildTime;
-    }
 }

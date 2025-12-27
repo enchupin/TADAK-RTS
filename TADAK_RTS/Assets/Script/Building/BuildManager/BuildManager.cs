@@ -5,7 +5,7 @@ public class BuildManager : MonoBehaviour {
     public static BuildManager Instance { get; private set; }
 
     [SerializeField] private GameObject inputHandler;
-    private BaseBuilding selectedData;
+    private BuildingJsonData selectedData;
     private BuildPreview preview;
     private GameObject loadedPrefab;
     private readonly IPlacementValidator validator = new OccupationValidator();
@@ -14,7 +14,7 @@ public class BuildManager : MonoBehaviour {
 
 
     void Start() {
-        // 테스트용으로 Human 종족 데이터를 로드 (나중에 어딘가에서 호출해야함)
+        // 테스트용으로 Human 종족 데이터를 로드 (나중에 다른 어딘가에서 호출해야함)
         GameDataBase.Initialize("Human");
     }
 
@@ -59,6 +59,8 @@ public class BuildManager : MonoBehaviour {
         preview = new BuildPreview(prefab);
         inputHandler.SetActive(true);
     }
+
+
 
     // 건설 확정 메서드
     public async Task ConfirmPlacement(string user) {

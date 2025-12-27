@@ -10,9 +10,10 @@ public class RaceSpecialBuildingData : BaseBuilding, IRacialSpecialty {
     public string SpecialEffectDescription { get; private set; }
     public float EffectValue { get; private set; }
 
-    public RaceSpecialBuildingData(string id, string type, Race race, int wood, int rock, float hp, float time, string description, float value) {
-        ID = id; Type = type; Race = race; Wood = wood; Rock = rock; MaxHealth = hp; BuildTime = time;
-        SpecialEffectDescription = description;
-        EffectValue = value;
+    public RaceSpecialBuildingData(BuildingJsonData data) : base(data) {
+        
+
     }
+
+
 }
