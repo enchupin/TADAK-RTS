@@ -32,7 +32,7 @@ public static class GameDataBase {
         if (wrapper == null || wrapper.buildingDatabase_json == null) return;
 
         foreach (var item in wrapper.buildingDatabase_json) {
-            // 기존 건물 분기 로직 유지
+            // 특수 건물 분기 로직 -> 추후 변경 예정
             if (item.Type == "Unit") {
                 Building_db.Add(item.ID, new UnitBuildingData(
                     item.ID, item.Type, item.Race, item.Wood, item.Rock,
