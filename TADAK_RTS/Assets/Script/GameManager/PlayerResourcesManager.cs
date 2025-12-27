@@ -3,9 +3,10 @@
 public class PlayerResourcesManager : MonoBehaviour {
     public static PlayerResourcesManager Instance { get; private set; }
 
-    public int Wood { get; private set; } = 0;
-    public int Rock { get; private set; } = 0;
-    public int Food { get; private set; } = 0;
+    // 테스트용 자원 설정
+    public int Wood { get; private set; } = 10000;
+    public int Rock { get; private set; } = 10000;
+    public int Food { get; private set; } = 10000;
     public int CurrentPopulation { get; private set; } = 0;
     public int MaxPopulation { get; private set; } = 200;
 

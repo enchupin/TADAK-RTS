@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Threading.Tasks;
+using UnityEngine.Rendering.LookDev;
 
 public class BuildManager : MonoBehaviour {
     public static BuildManager Instance { get; private set; }
@@ -8,6 +9,7 @@ public class BuildManager : MonoBehaviour {
     private BuildingJsonData selectedData;
     private BuildPreview preview;
     private GameObject loadedPrefab;
+    private GameObject constructionPrefab;
     private readonly IPlacementValidator validator = new OccupationValidator();
 
     private void Awake() {
@@ -20,8 +22,8 @@ public class BuildManager : MonoBehaviour {
 
 
     private void Start() {
-        // 테스트용으로 Human 종족 데이터를 로드 (나중에 다른 어딘가에서 호출해야함)
-        GameDataBase.Initialize("Human");
+        // 테스트용으로 Orc 종족 데이터를 로드 (나중에 다른 어딘가에서 호출해야함)
+        GameDataBase.Initialize("Orc");
     }
 
     // async Task를 사용하여 안정성 및 추적 가능성 확보
@@ -34,10 +36,9 @@ public class BuildManager : MonoBehaviour {
                 Debug.LogError($"[BuildManager] {id}에 해당하는 데이터가 JSON에 없습니다.");
                 return;
             }
-
             // 비동기 작업의 흐름 제어 (로딩 중 UI 등을 띄울 수 있음)
             loadedPrefab = await ResourceManager.Instance.GetBuildingPrefab(id);
-
+            constructionPrefab = await ResourceManager.Instance.GetBuildingPrefab("Orc_Construction"); // 테스트 용
             if (loadedPrefab != null) {
                 InitializeBuildPreview(loadedPrefab);
             }
@@ -75,7 +76,6 @@ public class BuildManager : MonoBehaviour {
         if (preview == null || selectedData == null) {
             return;
         }
-
         Vector3 pos = preview.GetPosition();
         if (!validator.IsValid(pos, user)) {
             return;
@@ -86,7 +86,7 @@ public class BuildManager : MonoBehaviour {
 
 
         // 나중에 Addressables.InstantiateAsync를 쓸 것에 대비해 async Task 타입으로 구현
-        Instantiate(loadedPrefab, pos, Quaternion.identity);
+        Instantiate(constructionPrefab, pos, Quaternion.Euler(-90f, 0f, 0f));
         ClearMode();
 
         // Task 반환을 위해 명시적으로 기다릴게 없다면 자동으로 완료된 Task 반환

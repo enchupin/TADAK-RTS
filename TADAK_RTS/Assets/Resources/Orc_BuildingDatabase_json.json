@@ -1,8 +1,7 @@
 {
   "buildingDatabase_json": [
     {
-      "ID": "Human_Barracks",
-      "Type": "Unit",
+      "ID": "Orc_Fortress",
       "Race": 0,
       "Wood": 150,
       "Rock": 150,
@@ -13,15 +12,15 @@
       "AmountPerTick": 0
     },
     {
-      "ID": "Human_Wood",
-      "Type": "Resource",
+      "ID": "Orc_Construction",
       "Race": 0,
-      "Wood": 100,
-      "Rock": 100,
-      "MaxHealth": 300.0,
-      "BuildTime": 10.0,
-      "ProducibleUnits": [],
-      "ResourceType": "Wood"
+      "Wood": 150,
+      "Rock": 150,
+      "MaxHealth": 500.0,
+      "BuildTime": 15.0,
+      "ProducibleUnits": ["Archer"],
+      "ResourceType": "",
+      "AmountPerTick": 0
     }
   ]
 }
