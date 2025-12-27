@@ -1,7 +1,4 @@
-﻿using NUnit.Framework;
-using System.Diagnostics;
-using System.Collections.Generic;
-
+﻿using System.Collections.Generic;
 
 [System.Serializable]
 public class BuildingJsonData {
@@ -26,4 +23,21 @@ public class BuildingJsonData {
 [System.Serializable]
 public class BuildingDataWrapper {
     public List<BuildingJsonData> buildingDatabase_json;
+}
+
+[System.Serializable]
+public class UnitJsonData {
+    public string ID;
+    public string Name;
+    public Race Race;
+    public int AttackDamage;
+    public float AttackSpeed;
+    public float MoveSpeed;
+    public int CostWood;
+    public int CostRock;
+}
+
+[System.Serializable]
+public class UnitDataWrapper {
+    public List<UnitJsonData> unitDatabase_json;
 }

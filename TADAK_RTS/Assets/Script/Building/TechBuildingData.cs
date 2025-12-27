@@ -15,4 +15,7 @@ public class TechBuildingData : BaseBuilding, IUnitUnlocker {
         ID = id; Type = type; Race = race; Wood = wood; Rock = rock; MaxHealth = hp; BuildTime = time;
         UnlockedUnitNames = unlockedUnits;
     }
+
+
+
 }

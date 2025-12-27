@@ -13,12 +13,17 @@ public class BuildManager : MonoBehaviour {
     void Awake() => Instance = this;
 
 
+    void Start() {
+        // 테스트용으로 Human 종족 데이터를 로드 (나중에 어딘가에서 호출해야함)
+        GameDataBase.Initialize("Human");
+    }
+
     // async Task를 사용하여 안정성 및 추적 가능성 확보
     public async Task StartBuildMode(string id) {
         try {
             // 데이터와 에셋 로딩을 병렬로 처리하거나 순차적으로 처리
             // 데이터 가져오기 (JSON 기반)
-            selectedData = BuildingDataBase.Get(id);
+            selectedData = GameDataBase.GetBuilding(id);
             if (selectedData == null) {
                 Debug.LogError($"[BuildManager] {id}에 해당하는 데이터가 JSON에 없습니다.");
                 return;
