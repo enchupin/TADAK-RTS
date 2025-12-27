@@ -19,6 +19,6 @@ public class OccupationValidator : IPlacementValidator {
             }
         }
         Debug.LogWarning("내 점령지가 아닌 곳에는 건설할 수 없습니다.");
-        return false;
+        return true; // 테스트용, 나중에 return false; 로 변경해야함
     }
 }

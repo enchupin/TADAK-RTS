@@ -11,11 +11,5 @@ public interface IUnitUnlocker {
 public class TechBuildingData : BaseBuilding, IUnitUnlocker {
     public List<string> UnlockedUnitNames { get; private set; }
 
-    public TechBuildingData(string id, string type, Race race, int wood, int rock, float hp, float time, List<string> unlockedUnits) {
-        ID = id; Type = type; Race = race; Wood = wood; Rock = rock; MaxHealth = hp; BuildTime = time;
-        UnlockedUnitNames = unlockedUnits;
-    }
-
-
-
+    public TechBuildingData(BuildingJsonData data) : base(data) { }
 }

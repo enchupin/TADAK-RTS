@@ -7,8 +7,7 @@ public interface IResourceGenerator {
 public class ResourceBuildingData : BaseBuilding, IResourceGenerator {
     public string ResourceType { get; private set; }
 
-    public ResourceBuildingData(string id, string type, Race race, int wood, int rock, float hp, float time, string resType) {
-        ID = id; Race = race; Type = type; Wood = wood; Rock = rock; MaxHealth = hp; BuildTime = time;
-        ResourceType = resType;
-    }
+    public ResourceBuildingData(BuildingJsonData data) : base(data) { }
+
+
 }

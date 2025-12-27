@@ -10,14 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: OrcBuilding
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: Default Local Group
-  m_GUID: 75860abd505d13a4bb18e061c859255c
-  m_SerializeEntries: []
+  m_GroupName: OrcBuilding
+  m_GUID: aca71c6e52064b7479101d695673a03f
+  m_SerializeEntries:
+  - m_GUID: 10f10fd3e95050a49833280c8089db9d
+    m_Address: Orc_Fortress
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9882204cf2b7b7e4fb2a648e1503bca1
+    m_Address: Orc_Construction
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 279798a0aa601c14abc65627960ef923, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 31b39527ab3c3844f8fb934104f75749, type: 2}
-    - {fileID: 11400000, guid: 887be75774e94f4489a5cadba354a1ce, type: 2}
+    - {fileID: 11400000, guid: 5bae8a1ff783b144d9eda0e8569a00e1, type: 2}
+    - {fileID: 11400000, guid: 7985f0411d14b9f48ae82a0abd020b05, type: 2}
