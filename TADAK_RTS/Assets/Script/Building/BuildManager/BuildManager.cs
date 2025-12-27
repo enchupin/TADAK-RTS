@@ -10,10 +10,16 @@ public class BuildManager : MonoBehaviour {
     private GameObject loadedPrefab;
     private readonly IPlacementValidator validator = new OccupationValidator();
 
-    void Awake() => Instance = this;
+    private void Awake() {
+        if (Instance == null) {
+            Instance = this;
+        } else {
+            Destroy(gameObject);
+        }
+    }
 
 
-    void Start() {
+    private void Start() {
         // 테스트용으로 Human 종족 데이터를 로드 (나중에 다른 어딘가에서 호출해야함)
         GameDataBase.Initialize("Human");
     }
@@ -42,7 +48,9 @@ public class BuildManager : MonoBehaviour {
 
     public void UpdateGhost(Vector3 position, string user) {
         // preview(BuildPreview 객체)가 로드 완료되어 생성된 상태인지 확인
-        if (preview == null) return;
+        if (preview == null) {
+            return;
+        }
 
         // 미리보기 위치 갱신
         preview.SetPosition(position);
@@ -64,16 +72,22 @@ public class BuildManager : MonoBehaviour {
 
     // 건설 확정 메서드
     public async Task ConfirmPlacement(string user) {
-        if (preview == null) return;
+        if (preview == null || selectedData == null) {
+            return;
+        }
 
         Vector3 pos = preview.GetPosition();
-        if (validator.IsValid(pos, user)) {
-
-            // 나중에 Addressables.InstantiateAsync를 쓸 것에 대비해 async Task 타입으로 구현
-            Instantiate(loadedPrefab, pos, Quaternion.identity);
-
-            ClearMode();
+        if (!validator.IsValid(pos, user)) {
+            return;
         }
+        if (!PlayerResourcesManager.Instance.ConsumeResources(0, selectedData.Wood, selectedData.Rock)) {
+            return;
+        }
+
+
+        // 나중에 Addressables.InstantiateAsync를 쓸 것에 대비해 async Task 타입으로 구현
+        Instantiate(loadedPrefab, pos, Quaternion.identity);
+        ClearMode();
 
         // Task 반환을 위해 명시적으로 기다릴게 없다면 자동으로 완료된 Task 반환
         await Task.CompletedTask;

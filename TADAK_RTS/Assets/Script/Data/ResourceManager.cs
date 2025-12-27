@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 public class ResourceManager : MonoBehaviour {
-    private static ResourceManager instance; // 싱글톤 (Lazy Initialization)
+    private static ResourceManager instance; // Lazy Initialization 싱글톤
     public static ResourceManager Instance {
         get {
             if (instance == null) {
