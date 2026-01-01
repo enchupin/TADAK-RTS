@@ -13,7 +13,7 @@ public class RaceSpecialBuildingData : BaseBuilding, IRacialSpecialty {
     public RaceSpecialBuildingData(BuildingJsonData data) : base(data) {
         
 
-    }
 
+    }
 
 }

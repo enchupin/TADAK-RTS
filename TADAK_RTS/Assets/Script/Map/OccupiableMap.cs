@@ -7,12 +7,11 @@ public interface IOccupiable {
     bool IsOccupiedBy(string username);
 }
 
-public class OccupiableMap : Map, IOccupiable, IOwnable {
+public class OccupiableMap : Map, IOccupiable {
     private OccupyProcessor _occupyProcessor;
     public string OwnerName { get; set; }
     public OccupancyState State { get; set; }
     public bool IsOccupiedBy(string username) => State == OccupancyState.Occupied && OwnerName == username;
-    public bool IsOwnedBy(string username) => username == OwnerName;
 
 
     private void Awake() {
