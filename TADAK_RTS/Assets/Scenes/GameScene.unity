@@ -1135,6 +1135,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5350674835035478968, guid: 08cd6521aff5d9a45bc6683a20668051, type: 3}
+      propertyPath: ghostMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6eee5cf640741164193aa6fd9439e4cc, type: 2}
+    - target: {fileID: 5350674835035478968, guid: 08cd6521aff5d9a45bc6683a20668051, type: 3}
       propertyPath: mapLayer.m_Bits
       value: 64
       objectReference: {fileID: 0}
