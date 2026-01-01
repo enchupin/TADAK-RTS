@@ -84,7 +84,7 @@ public class BuildModeManager : MonoBehaviour {
     private void UpdateGhost(Vector3 position) {
         ghostObject.transform.position = position;
         bool isValid = validator.IsValid(position, userName);
-        Color targetColor = isValid ? new Color(0, 255f, 0, 0.5f) : new Color(255f, 0, 0, 0.5f);
+        Color targetColor = isValid ? new Color(0, 1f, 0, 0.5f) : new Color(1f, 0, 0, 0.5f);
         foreach (var r in ghostRenderers) {
             r.material.color = targetColor;
         }
