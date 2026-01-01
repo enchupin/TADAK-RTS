@@ -18,7 +18,7 @@ public class BuildInputHandler : MonoBehaviour {
 
         // Raycast
         if (Physics.Raycast(ray, out RaycastHit hit, 1000f, LayerMask.GetMask("Map"))) {
-            BuildModeManager.Instance.UpdateGhost(hit.point, userName);
+            BuildManager.Instance.UpdateGhost(hit.point, userName);
         }
 
         // 건설 확정
@@ -28,13 +28,13 @@ public class BuildInputHandler : MonoBehaviour {
 
         // 건설 모드 취소
         if (Keyboard.current.escapeKey.wasPressedThisFrame) {
-            BuildModeManager.Instance.ClearMode();
+            BuildManager.Instance.ClearMode();
         }
     }
 
     private async void ConfirmBuild() {
         isConfirming = true;
-        await BuildModeManager.Instance.ConfirmPlacement(userName);
+        await BuildManager.Instance.ConfirmPlacement(userName);
         isConfirming = false;
     }
 }

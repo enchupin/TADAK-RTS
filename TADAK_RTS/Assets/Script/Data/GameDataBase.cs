@@ -17,7 +17,6 @@ public static class DataManager {
         return JsonUtility.FromJson<T>(jsonFile.text);
     }
 }
-
 public static class GameDataBase {
     private static readonly Dictionary<string, BuildingJsonData> Building_db = new Dictionary<string, BuildingJsonData>();
     private static readonly Dictionary<string, UnitJsonData> Unit_db = new Dictionary<string, UnitJsonData>();
