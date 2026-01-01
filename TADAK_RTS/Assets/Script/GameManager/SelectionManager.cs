@@ -8,6 +8,8 @@ public class SelectionManager : MonoBehaviour {
     [Header("Settings")]
     [SerializeField] private string myPlayerID = "Player1"; // 현재 플레이어 ID
     [SerializeField] private LayerMask unitLayer; // 유닛 레이어
+    private Texture2D selectionTexture; // 드래그 범위
+
 
     private List<UnitController> selectedUnits = new List<UnitController>();
     private Vector2 startMousePos;
@@ -16,6 +18,8 @@ public class SelectionManager : MonoBehaviour {
     private void Awake() {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+
+        InitializeDragTexture();
     }
 
     private void Update() {
@@ -23,14 +27,14 @@ public class SelectionManager : MonoBehaviour {
         HandleMovementCommand();
     }
 
+
+
     private void HandleSelection() {
         // 드래그 시작
         if (Mouse.current.leftButton.wasPressedThisFrame) {
             startMousePos = Mouse.current.position.ReadValue();
             isDragging = true;
         }
-
-        // 드래그 중 시각적 피드백 구현
 
         // 선택 완료
         if (Mouse.current.leftButton.wasReleasedThisFrame) {
@@ -46,6 +50,24 @@ public class SelectionManager : MonoBehaviour {
             }
         }
 
+    }
+
+
+    private void OnGUI() {
+        if (isDragging) {
+            var rect = GetScreenRect(startMousePos, Mouse.current.position.ReadValue());
+            rect.y = Screen.height - rect.y - rect.height;
+            GUI.DrawTexture(rect, selectionTexture);
+        }
+    }
+
+
+    private void InitializeDragTexture() {
+        selectionTexture = new Texture2D(1, 1);
+        selectionTexture = new Texture2D(1, 1);
+        Color32 fixedColor = new Color32(204, 204, 255, 77);
+        selectionTexture.SetPixel(0, 0, fixedColor);
+        selectionTexture.Apply();
     }
 
     // 단일 선택
