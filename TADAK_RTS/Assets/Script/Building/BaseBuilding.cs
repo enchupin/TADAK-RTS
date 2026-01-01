@@ -1,8 +1,10 @@
 ﻿
+using UnityEngine;
+
 public enum Race { Human, Elf, Beastman, Undead }
 
 // 건물 데이터 클래스
-public abstract class BaseBuilding : IOwnable {
+public abstract class BaseBuilding : MonoBehaviour, IOwnable {
     public string ID { get; protected set; }
     public Race Race { get; protected set; }
     public int Wood { get; protected set; }
