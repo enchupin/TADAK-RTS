@@ -34,7 +34,7 @@ public class UnitTracker : IUnitMeasurable {
 
     public IEnumerable<UnitSummary> GetUnitSummaries() {
         return unitsInRange
-            .GroupBy(u => new { u.OwnerName, u.UnitName })
+            .GroupBy(u => new { u.OwnerID, u.ID })
             .Select(group => new UnitSummary {
                 Owner = group.Key.OwnerName,
                 UnitName = group.Key.UnitName,
