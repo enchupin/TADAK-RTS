@@ -1,7 +1,5 @@
 ﻿using System;
 
-
-
 public interface IDead {
     // 유닛이 죽었을 때 외부에 알릴 이벤트
     event Action<BaseUnit> OnDead;

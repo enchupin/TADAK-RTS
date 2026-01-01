@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 
+public enum Race { Human, Elf, Beastman, Undead }
+
 [System.Serializable]
 public class BuildingJsonData {
     public string ID;
