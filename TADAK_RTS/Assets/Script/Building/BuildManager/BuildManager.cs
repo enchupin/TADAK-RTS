@@ -5,8 +5,11 @@ using System.Threading.Tasks;
 public class BuildModeManager : MonoBehaviour {
     public static BuildModeManager Instance { get; private set; }
 
-    [Header("Settings")]
     [SerializeField] private LayerMask mapLayer;
+    [SerializeField] private Material ghostMaterial; // 인스펙터에서 Transparent 설정된 머티리얼 할당
+
+
+
     private string userName = "Player1";
 
     // Preview(Ghost) 관련 변수
@@ -79,12 +82,15 @@ public class BuildModeManager : MonoBehaviour {
         ghostObject = Instantiate(prefab);
         ghostObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         ghostRenderers = ghostObject.GetComponentsInChildren<Renderer>();
+        foreach (var r in ghostRenderers) {
+            r.material = ghostMaterial;
+        }
     }
 
     private void UpdateGhost(Vector3 position) {
         ghostObject.transform.position = position;
         bool isValid = validator.IsValid(position, userName);
-        Color targetColor = isValid ? new Color(0, 255f, 0, 0.5f) : new Color(255f, 0, 0, 0.5f);
+        Color targetColor = isValid ? new Color(0, 1f, 0, 0.3f) : new Color(1f, 0, 0, 0.3f);
         foreach (var r in ghostRenderers) {
             r.material.color = targetColor;
         }
