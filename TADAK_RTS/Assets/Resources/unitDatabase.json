@@ -1,0 +1,14 @@
+{
+	"unitDatabase_json": [
+		{
+			"ID": "Worker",
+			"Name": "Worker",
+			"Race": 2,
+			"AttackDamage": 5,
+			"AttackSpeed": 1,
+			"MoveSpeed": 2,
+			"CostWood": 0,
+			"CostRock": 0
+		}
+	]
+}
