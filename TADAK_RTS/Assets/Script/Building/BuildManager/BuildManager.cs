@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using UnityEngine.Rendering.LookDev;
 
-public class BuildModeManager : MonoBehaviour {
-    public static BuildModeManager Instance { get; private set; }
+public class BuildManager : MonoBehaviour {
+    public static BuildManager Instance { get; private set; }
 
     [SerializeField] private GameObject inputHandler;
     private BuildingJsonData selectedData;
