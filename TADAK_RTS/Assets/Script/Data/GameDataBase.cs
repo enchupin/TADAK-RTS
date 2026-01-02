@@ -64,7 +64,7 @@ public static class GameDataBase {
     public static UnitJsonData GetUnit(string id) {
         if (Unit_db == null || Unit_db.Count == 0) {
             Debug.LogError($"[GameDataBase] Unit_db가 비어있습니다! ID: {id}를 찾을 수 없습니다.");
-            return null;
+            return default;
         }
 
         if (Unit_db.TryGetValue(id, out var data)) {
@@ -72,6 +72,6 @@ public static class GameDataBase {
         }
 
         Debug.LogWarning($"[GameDataBase] ID: {id} 에 해당하는 유닛 데이터가 DB에 없습니다.");
-        return null;
+        return default;
     }
 }

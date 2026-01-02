@@ -25,15 +25,16 @@ public class BuildingDataWrapper {
 }
 
 [System.Serializable]
-public class UnitJsonData {
+public struct UnitJsonData {
     public string ID;
-    public string Name;
     public Race Race;
-    public int AttackDamage;
-    public float AttackSpeed;
-    public float MoveSpeed;
     public int CostWood;
     public int CostRock;
+    public int CostFood;
+    public float moveSpeed;
+    public float AttackSpeed;
+    public float AttackDamage;
+    public float MaxHP;
 }
 
 [System.Serializable]

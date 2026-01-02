@@ -3,7 +3,8 @@
 
 }
 
-public class WorkerUnit : BaseUnit, IWorkerUnit {
+public class WorkerUnit : UnitController, IWorkerUnit
+{
 
 
 }

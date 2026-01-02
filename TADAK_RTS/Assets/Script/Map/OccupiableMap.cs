@@ -21,13 +21,13 @@ public class OccupiableMap : Map, IOccupiable {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.TryGetComponent<BaseUnit>(out var unit)) {
+        if (other.TryGetComponent<UnitController>(out var unit)) {
             _occupyProcessor.UnitRegistry.AddUnit(unit);
         }
     }
 
     private void OnTriggerExit(Collider other) {
-        if (other.TryGetComponent<BaseUnit>(out var unit)) {
+        if (other.TryGetComponent<UnitController>(out var unit)) {
             _occupyProcessor.UnitRegistry.RemoveUnit(unit);
         }
     }
