@@ -7,7 +7,7 @@ public class SelectionManager : MonoBehaviour {
 
     [Header("Settings")]
     [SerializeField] private string myPlayerID = "Player1"; // 현재 플레이어 ID
-    [SerializeField] private LayerMask unitLayer; // 유닛 레이어
+    [SerializeField] private LayerMask clickLayer; // 클릭 레이어
     private Texture2D selectionTexture; // 드래그 범위
 
 
@@ -75,37 +75,56 @@ public class SelectionManager : MonoBehaviour {
         ClearSelection();
 
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
-        if (Physics.Raycast(ray, out RaycastHit hit, 1000f, unitLayer)) {
-            UnitController unit = hit.collider.GetComponent<UnitController>();
-            if (unit != null && IsMyUnit(unit)) {
-                SelectUnit(unit);
-            }
+        if (Physics.Raycast(ray, out RaycastHit entityHit, 1000f, clickLayer)) {
+            ISelectable entity = entityHit.collider.GetComponent<ISelectable>();
+
+            // 선택 성공
+            entity.SingleSelectEntityInfo();
         }
     }
+
 
     // 드래그 범위 선택
     private void DragSelect(Vector2 startPos, Vector2 endPos) {
         ClearSelection();
-
-        // 드래그 사각형 영역 계산
         Rect selectionRect = GetScreenRect(startPos, endPos);
-
-
 
 
         // 맵 상의 모든 UnitController를 검사 (성능 최적화가 필요하면 레이어 기반 Overlap 사용 가능)
         UnitController[] allUnits = Object.FindObjectsByType<UnitController>(FindObjectsSortMode.None);
 
 
-
         foreach (var unit in allUnits) {
             // 유닛의 월드 좌표를 스크린 좌표로 변환하여 사각형 안에 있는지 확인
             Vector2 unitScreenPos = Camera.main.WorldToScreenPoint(unit.transform.position);
-            if (selectionRect.Contains(unitScreenPos) && IsMyUnit(unit)) {
+            if (selectionRect.Contains(unitScreenPos) && IsOwnedByMe(unit)) {
                 SelectUnit(unit);
             }
         }
+
+
+        if (selectedUnits == null)
+            return;
+
+        else if (selectedUnits.Count == 1) {
+
+
+        }
+        ShowAllUnits();
+
+
     }
+
+
+    private void ShowAllUnits() {
+        // 전체 UI 구현
+
+
+
+    }
+
+
+
 
     // 우클릭 이동 명령
     private void HandleMovementCommand() {
@@ -121,12 +140,17 @@ public class SelectionManager : MonoBehaviour {
         }
     }
 
-    private bool IsMyUnit(UnitController unit) {
-        // BaseUnit의 OwnerID 확인 구현
+    private bool IsOwnedByMe(Component entity) {
+        // 내 소유인지 판별하는 로직 구현
 
 
         return true;
     }
+
+
+    
+
+
 
     private void SelectUnit(UnitController unit) {
         if (!selectedUnits.Contains(unit)) {
@@ -134,6 +158,8 @@ public class SelectionManager : MonoBehaviour {
             // 유닛에게 선택되었음을 알리는 시각적 효과 구현
         }
     }
+
+
 
     private void ClearSelection() {
         selectedUnits.Clear();
@@ -144,6 +170,6 @@ public class SelectionManager : MonoBehaviour {
     private Rect GetScreenRect(Vector2 screenPos1, Vector2 screenPos2) {
         var topLeft = Vector2.Min(screenPos1, screenPos2);
         var bottomRight = Vector2.Max(screenPos1, screenPos2);
-        return Rect.MinMaxRect(topLeft.x, screenPos1.y, bottomRight.x, screenPos2.y);
+        return Rect.MinMaxRect(topLeft.x, topLeft.y, bottomRight.x, bottomRight.y);
     }
 }
