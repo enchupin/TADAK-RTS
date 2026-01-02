@@ -24,7 +24,7 @@ public class BuildModeManager : MonoBehaviour {
     private readonly IPlacementValidator validator = new OccupationValidator();
 
     // 빌드 모드 활성화 여부
-    private bool isInBuildMode => ghostObject != null;
+    public bool IsInBuildMode => ghostObject != null;
 
     private void Awake() {
         if (Instance == null) {
@@ -40,17 +40,17 @@ public class BuildModeManager : MonoBehaviour {
 
     private void Update() {
         // 빌드 모드가 아니면 아무것도 하지 않음
-        if (!isInBuildMode) return;
+        if (!IsInBuildMode) return;
 
         HandleBuildInput();
     }
 
     private void HandleBuildInput() {
-        Vector2 mousePos = Mouse.current.position.ReadValue();
-        Ray ray = Camera.main.ScreenPointToRay(mousePos);
 
         // 추후 LayerMask.GetMask("Map")를 mapLayer로 변경
-        if (Physics.Raycast(ray, out RaycastHit hit, 1000f, LayerMask.GetMask("Map"))) {
+        RaycastHit hit = MouseProvider.GetHitInfo(LayerMask.GetMask("Map"));
+
+        if (hit.collider != null) {
             UpdateGhost(hit.point);
         }
         if (Mouse.current.leftButton.wasPressedThisFrame && !isConfirming) {
@@ -105,7 +105,7 @@ public class BuildModeManager : MonoBehaviour {
     }
 
     public async Task ConfirmPlacement() {
-        if (!isInBuildMode || selectedData == null) return;
+        if (!IsInBuildMode || selectedData == null) return;
 
         Vector3 pos = ghostObject.transform.position;
 
