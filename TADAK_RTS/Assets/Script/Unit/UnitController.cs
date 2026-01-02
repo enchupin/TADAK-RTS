@@ -14,9 +14,11 @@ public class UnitController : MonoBehaviour, ISelectable
 
     public event Action<UnitController> OnDead;
 
-    // 이동 예정
-    public void Die()
-    {
+
+    // ISelectable 인터페이스 구현
+    public void SingleSelectEntityInfo() {
 
     }
+
+
 }
