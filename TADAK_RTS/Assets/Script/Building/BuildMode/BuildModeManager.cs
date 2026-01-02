@@ -26,6 +26,11 @@ public class BuildModeManager : MonoBehaviour {
     // 빌드 모드 활성화 여부
     public bool IsInBuildMode => ghostObject != null;
 
+    // 구조체 데이터가 유효한지 확인하는 도우미 프로퍼티
+    private bool IsDataSelected => !string.IsNullOrEmpty(selectedData.ID);
+
+
+
     private void Awake() {
         if (Instance == null) {
             Instance = this;
@@ -45,17 +50,21 @@ public class BuildModeManager : MonoBehaviour {
         HandleBuildInput();
     }
 
+
+    // 클릭 관리
     private void HandleBuildInput() {
 
         // 추후 LayerMask.GetMask("Map")를 mapLayer로 변경
         RaycastHit hit = MouseProvider.GetHitInfo(LayerMask.GetMask("Map"));
-
+        // 잔상 위치 업데이트
         if (hit.collider != null) {
             UpdateGhost(hit.point);
         }
+        // 빌드 확정
         if (Mouse.current.leftButton.wasPressedThisFrame && !isConfirming) {
             _ = ConfirmPlacement(); // 비동기 호출
         }
+        // 빌드모드 취소
         if (Keyboard.current.escapeKey.wasPressedThisFrame) {
             ClearMode();
         }
@@ -63,11 +72,11 @@ public class BuildModeManager : MonoBehaviour {
 
     public async Task StartBuildMode(string id) {
         try {
-            selectedData = GameDataBase.GetBuilding(id);
-            if (selectedData == null) return;
+            selectedData = GameDataBase.GetBuilding(id); // 아이디를 기준으로 딕셔너리에서 데이터 가져옴
+            if (!IsDataSelected) return;
 
-            loadedPrefab = await ResourceManager.Instance.GetBuildingPrefab(id);
-            constructionPrefab = await ResourceManager.Instance.GetBuildingPrefab("Orc_Construction");
+            loadedPrefab = await ResourceManager.Instance.GetBuildingPrefab(id); // 건물 잔상 프리팹 로드
+            constructionPrefab = await ResourceManager.Instance.GetBuildingPrefab("Orc_Construction"); // 건설중 프리팹 로드
 
             if (loadedPrefab != null) {
                 CreateGhost(loadedPrefab);
@@ -105,7 +114,7 @@ public class BuildModeManager : MonoBehaviour {
     }
 
     public async Task ConfirmPlacement() {
-        if (!IsInBuildMode || selectedData == null) return;
+        if (!IsInBuildMode || !IsDataSelected) return;
 
         Vector3 pos = ghostObject.transform.position;
 

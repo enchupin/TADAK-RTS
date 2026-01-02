@@ -57,7 +57,7 @@ public static class GameDataBase {
         }
 
         Debug.LogWarning($"[GameDataBase] ID: {id} 에 해당하는 건물 데이터가 DB에 없습니다.");
-        return null;
+        return default;
     }
 
 
