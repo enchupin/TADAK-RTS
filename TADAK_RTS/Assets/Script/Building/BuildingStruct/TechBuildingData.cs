@@ -8,8 +8,7 @@ public interface IUnitUnlocker {
 
 
 // 유닛 해금 건물 데이터 클래스
-public class TechBuildingData : BaseBuilding, IUnitUnlocker {
+public class TechBuildingData : BuildingController, IUnitUnlocker {
     public List<string> UnlockedUnitNames { get; private set; }
 
-    public TechBuildingData(BuildingJsonData data) : base(data) { }
 }
