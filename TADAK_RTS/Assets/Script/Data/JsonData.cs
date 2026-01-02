@@ -3,7 +3,7 @@
 public enum Race { Human, Elf, Beastman, Undead }
 
 [System.Serializable]
-public class BuildingJsonData {
+public struct BuildingJsonData {
     public string ID;
     public Race Race;
     public int Wood;
