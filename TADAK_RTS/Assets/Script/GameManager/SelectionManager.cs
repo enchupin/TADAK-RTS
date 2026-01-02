@@ -16,9 +16,6 @@ public class SelectionManager : MonoBehaviour {
     private bool isDragging = false; // 드래그 중인지 판별
 
 
-    private BuildingController _selectedBuilding;
-
-
 
     private void Awake() {
         if (Instance == null) Instance = this;
