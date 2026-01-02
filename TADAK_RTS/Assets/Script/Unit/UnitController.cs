@@ -3,7 +3,7 @@ using UnityEngine;
 
 
 // 실제 유닛에 붙일 스크립트
-public class UnitController : MonoBehaviour
+public class UnitController : MonoBehaviour, ISelectable
 {
     private UnitSound _unitSound;
     private UnitHealth _health;
