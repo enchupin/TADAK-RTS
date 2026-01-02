@@ -1,0 +1,37 @@
+﻿{
+	"unitDatabase_json": [
+		{
+			"ID": "Worker",
+			"Race": 2,
+			"CostWood": 10,
+			"CostRock": 10,
+			"CostFood": 10,
+			"moveSpeed": 2,
+			"AttackSpeed": 1,
+			"AttackDamage": 5,
+			"MaxHP": 100
+		},
+		{
+			"ID": "runner",
+			"Race": 2,
+			"CostWood": 10,
+			"CostRock": 10,
+			"CostFood": 20,
+			"moveSpeed": 2,
+			"AttackSpeed": 1,
+			"AttackDamage": 5,
+			"MaxHP": 160
+		},
+		{
+			"ID": "detecter",
+			"Race": 2,
+			"CostWood": 50,
+			"CostRock": 10,
+			"CostFood": 10,
+			"moveSpeed": 2,
+			"AttackSpeed": 1,
+			"AttackDamage": 5,
+			"MaxHP": 10
+		}
+	]
+}
