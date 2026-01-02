@@ -54,7 +54,7 @@ public class OccupyProcessor {
 
     private string GetSingleWorkerOwner() {
         var workers = unitTracker.UnitsInRange.Where(u => u is IWorkerUnit).ToList();
-        var owners = workers.Select(u => u.OwnerID).Distinct().ToList();
+        var owners = workers.Select(u => u.OwnerId).Distinct().ToList();
         return (owners.Count == 1) ? owners[0] : null;
     }
 
