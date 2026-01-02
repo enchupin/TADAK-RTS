@@ -60,25 +60,26 @@ public class BuildModeManager : MonoBehaviour {
         if (hit.collider != null) {
             UpdateGhost(hit.point);
         }
-        // 빌드 확정
+        // 건설 확정
         if (Mouse.current.leftButton.wasPressedThisFrame && !isConfirming) {
             _ = ConfirmPlacement(); // 비동기 호출
         }
-        // 빌드모드 취소
+        // 건설모드 취소
         if (Keyboard.current.escapeKey.wasPressedThisFrame) {
             ClearMode();
         }
     }
 
+    // 빌드모드 시작
     public async Task StartBuildMode(string id) {
         try {
             selectedData = GameDataBase.GetBuilding(id); // 아이디를 기준으로 딕셔너리에서 데이터 가져옴
             if (!IsDataSelected) return;
 
-            loadedPrefab = await ResourceManager.Instance.GetBuildingPrefab(id); // 건물 잔상 프리팹 로드
-            constructionPrefab = await ResourceManager.Instance.GetBuildingPrefab("Orc_Construction"); // 건설중 프리팹 로드
+            loadedPrefab = await ResourceManager.Instance.GetBuildingPrefab(id); // 건물 잔상 프리팹
+            constructionPrefab = await ResourceManager.Instance.GetBuildingPrefab("Orc_Construction"); // 건설중 프리팹
 
-            if (loadedPrefab != null) {
+            if (loadedPrefab != null) { // 예외
                 CreateGhost(loadedPrefab);
             }
         } catch (System.Exception e) {
@@ -86,6 +87,7 @@ public class BuildModeManager : MonoBehaviour {
         }
     }
 
+    // 잔상 프리팹 로드
     private void CreateGhost(GameObject prefab) {
         ClearGhost();
         ghostObject = Instantiate(prefab);
@@ -96,6 +98,7 @@ public class BuildModeManager : MonoBehaviour {
         }
     }
 
+    // 잔상 위치 업데이트
     private void UpdateGhost(Vector3 position) {
         ghostObject.transform.position = position;
         bool isValid = validator.IsValid(position, userName);
@@ -105,6 +108,7 @@ public class BuildModeManager : MonoBehaviour {
         }
     }
 
+    // 잔상 프리팹 제거
     private void ClearGhost() {
         if (ghostObject != null) {
             Destroy(ghostObject);
@@ -113,29 +117,33 @@ public class BuildModeManager : MonoBehaviour {
         }
     }
 
+    // 건설 확정
     public async Task ConfirmPlacement() {
         if (!IsInBuildMode || !IsDataSelected) return;
 
-        Vector3 pos = ghostObject.transform.position;
+        Vector3 pos = ghostObject.transform.position; // 잔상 위치에 건설
 
         if (!validator.IsValid(pos, userName)) return;
         if (!PlayerResourcesManager.Instance.ConsumeResources(0, selectedData.Wood, selectedData.Rock)) return;
         isConfirming = true;
 
+        // 프리팹 생성
         Instantiate(constructionPrefab, pos, Quaternion.Euler(-90f, 0f, 0f));
 
+        // 건설모드 종료
         ClearMode();
         isConfirming = false;
         await Task.CompletedTask;
     }
 
+    // 건설모드 종료
     public void ClearMode() {
         if (ghostObject != null) {
             Destroy(ghostObject);
             ghostObject = null;
             ghostRenderers = null;
         }
-        selectedData = null;
+        selectedData = default;
         isConfirming = false;
     }
 }

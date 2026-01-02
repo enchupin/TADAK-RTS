@@ -18,10 +18,12 @@ public static class DataManager {
     }
 }
 public static class GameDataBase {
+    // 건물, 유닛 데이터 보관함 딕셔너리
     private static readonly Dictionary<string, BuildingJsonData> Building_db = new Dictionary<string, BuildingJsonData>();
     private static readonly Dictionary<string, UnitJsonData> Unit_db = new Dictionary<string, UnitJsonData>();
 
-    public static void Initialize(string selectedRace) { // 어디선가 최초 1회 호출해야함
+    // 어디선가 최초 1회 호출해야함, 데이터베이스 초기화 및 로드
+    public static void Initialize(string selectedRace) {
         Building_db.Clear();
         Unit_db.Clear();
 
@@ -29,6 +31,7 @@ public static class GameDataBase {
         LoadUnits(selectedRace);
     }
 
+    // 로드용 메서드, 다른 곳에서 사용 x
     private static void LoadBuildings(string race) {
         var wrapper = DataManager.LoadJson<BuildingDataWrapper>(race, DataManager.BUILDING_DATABASE);
         if (wrapper == null || wrapper.buildingDatabase_json == null) return;
@@ -38,6 +41,7 @@ public static class GameDataBase {
         }
     }
 
+    // 로드용 메서드, 다른 곳에서 사용 x
     private static void LoadUnits(string race) {
         var wrapper = DataManager.LoadJson<UnitDataWrapper>(race, DataManager.UNIT_DATABASE);
         if (wrapper == null || wrapper.unitDatabase_json == null) return;
@@ -47,6 +51,7 @@ public static class GameDataBase {
         }
     }
 
+    // ID를 기준으로 건물의 정보를 반환
     public static BuildingJsonData GetBuilding(string id) {
         if (Building_db == null || Building_db.Count == 0) {
             Debug.LogWarning($"[GameDataBase] Building_db가 비어있습니다! ID: {id}를 찾을 수 없습니다.");
@@ -60,7 +65,7 @@ public static class GameDataBase {
         return default;
     }
 
-
+    // ID를 기준으로 유닛의 정보를 반환
     public static UnitJsonData GetUnit(string id) {
         if (Unit_db == null || Unit_db.Count == 0) {
             Debug.LogError($"[GameDataBase] Unit_db가 비어있습니다! ID: {id}를 찾을 수 없습니다.");
