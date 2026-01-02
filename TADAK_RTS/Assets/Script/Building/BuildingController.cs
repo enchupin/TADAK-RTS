@@ -1,16 +1,11 @@
 ﻿using UnityEngine;
 
-public class BuildingController : MonoBehaviour
+public class BuildingController : MonoBehaviour, ISelectable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
+
+
+
 }

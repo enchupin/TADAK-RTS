@@ -64,7 +64,6 @@ public class SelectionManager : MonoBehaviour {
 
     private void InitializeDragTexture() {
         selectionTexture = new Texture2D(1, 1);
-        selectionTexture = new Texture2D(1, 1);
         Color32 fixedColor = new Color32(204, 204, 255, 77);
         selectionTexture.SetPixel(0, 0, fixedColor);
         selectionTexture.Apply();
@@ -79,7 +78,7 @@ public class SelectionManager : MonoBehaviour {
             ISelectable entity = entityHit.collider.GetComponent<ISelectable>();
 
             // 선택 성공
-            entity.SingleSelectEntityInfo();
+            SingleSelectEntityInfo(entity);
         }
     }
 
@@ -107,11 +106,18 @@ public class SelectionManager : MonoBehaviour {
             return;
 
         else if (selectedUnits.Count == 1) {
-
+            SingleSelectEntityInfo(selectedUnits[0]);
 
         }
-        ShowAllUnits();
+        else {
+            ShowAllUnits();
+        }
 
+
+    }
+
+    // 단일 선택 UI
+    private void SingleSelectEntityInfo(ISelectable selectedEntity) {
 
     }
 

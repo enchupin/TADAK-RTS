@@ -8,14 +8,13 @@ public interface IUnitProducer {
 }
 
 // 유닛 생산 건물 데이터 클래스
-public class UnitBuildingData : BaseBuilding, IUnitProducer {
+public class UnitBuildingData : BuildingController, IUnitProducer {
     public List<string> ProducibleUnits { get; private set; }
 
-    public UnitBuildingData(BuildingJsonData data) : base(data) { }
 
 
     public void Produce(string unitName) {
-        UnityEngine.Debug.Log($"{ID}에서 {unitName} 생산을 시작합니다.");
+        UnityEngine.Debug.Log($"에서 {unitName} 생산을 시작합니다.");
     }
 
 
