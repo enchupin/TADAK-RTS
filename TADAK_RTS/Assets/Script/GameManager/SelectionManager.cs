@@ -6,9 +6,9 @@ public class SelectionManager : MonoBehaviour {
     public static SelectionManager Instance { get; private set; }
 
     [Header("Settings")]
-    [SerializeField] private string myPlayerID = "Player1"; // 현재 플레이어 ID
     [SerializeField] private LayerMask clickLayer; // 클릭 레이어
     [SerializeField] private LayerMask mapLayer;
+    private string myPlayerID = "Player1"; // 현재 플레이어 ID
 
 
     private Texture2D selectionTexture; // 드래그 범위
