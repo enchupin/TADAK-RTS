@@ -31,7 +31,7 @@ public struct UnitJsonData {
     public int CostWood;
     public int CostRock;
     public int CostFood;
-    public float moveSpeed;
+    public float MoveSpeed;
     public float AttackSpeed;
     public float AttackDamage;
     public float MaxHP;

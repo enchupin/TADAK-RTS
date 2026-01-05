@@ -29,18 +29,16 @@ public class SelectedUnits : MonoBehaviour {
         }
     }
 
-    // 선택된 유닛들에게 이동 명령 하달
-    public void ExecuteMove(Vector3 destination) {
-        foreach (var unit in _selectedList) {
-            IMovement movement = unit.GetComponent<IMovement>();
-            if (movement != null) {
-
-                // movement.Move();
-
+    public void ExecuteMove(Vector3 destination)
+    {
+        foreach (var unit in _selectedList)
+        {
+            if (unit != null)
+            {
+                unit.CommandMove(destination);
             }
         }
     }
-
 
     // 선택 상태에 따른 UI 업데이트
     public void UpdateSelectionUI() {
