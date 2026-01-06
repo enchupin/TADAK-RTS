@@ -14,7 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Default Local Group
   m_GUID: 75860abd505d13a4bb18e061c859255c
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 19f7d5c694fc97f43b458d2d39f955da
+    m_Address: Human_Construction
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d78d123d38fce7e43ba9e59b3181ebe3
+    m_Address: Human_Barracks
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 279798a0aa601c14abc65627960ef923, type: 2}
   m_SchemaSet:
