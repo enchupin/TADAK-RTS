@@ -1117,10 +1117,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259e827196f203c449d69e51b5eb50f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectionManager
-  myPlayerID: Player1
   clickLayer:
     serializedVersion: 2
     m_Bits: 0
+  mapLayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &1854625174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854625167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc18db301715f0b41b34b4c5854071ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectedUnits
+--- !u!114 &1854625175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854625167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df3947c9357b1e9448c2df51cfafc534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectBuilding
 --- !u!1001 &1942547533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1373,6 +1399,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 323558875325418933, guid: 943731fcfb16d6b49953b53adf93b51e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1854625171}
+    - targetCorrespondingSourceObject: {fileID: 323558875325418933, guid: 943731fcfb16d6b49953b53adf93b51e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1854625174}
+    - targetCorrespondingSourceObject: {fileID: 323558875325418933, guid: 943731fcfb16d6b49953b53adf93b51e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1854625175}
   m_SourcePrefab: {fileID: 100100000, guid: 943731fcfb16d6b49953b53adf93b51e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

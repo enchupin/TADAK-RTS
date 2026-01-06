@@ -41,7 +41,6 @@ public class SelectionManager : MonoBehaviour {
         if (Physics.Raycast(ray, out RaycastHit entityHit, 1000f, clickLayer)) {
             ISelectable entity = entityHit.collider.GetComponent<ISelectable>();
             // 선택 성공 시 단일 개체 UI 호출
-            entity.SingleSelectEntityInfo();
 
 
         }
