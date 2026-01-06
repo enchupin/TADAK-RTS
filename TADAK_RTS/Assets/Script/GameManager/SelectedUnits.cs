@@ -5,7 +5,7 @@ public class SelectedUnits : MonoBehaviour {
     public static SelectedUnits Instance { get; private set; }
 
     // 현재 선택된 유닛 리스트
-    private List<UnitController> _selectedList = new List<UnitController>();
+    public List<UnitController> _selectedList = new List<UnitController>();
     public int Count => _selectedList.Count;
 
     private void Awake() {
