@@ -1121,6 +1121,7 @@ MonoBehaviour:
   mapLayer:
     serializedVersion: 2
     m_Bits: 64
+  selectionRenderer: {fileID: 0}
 --- !u!114 &1657812882
 MonoBehaviour:
   m_ObjectHideFlags: 0

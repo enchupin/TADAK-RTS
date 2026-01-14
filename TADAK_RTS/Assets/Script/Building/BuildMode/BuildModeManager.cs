@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Threading.Tasks;
+using UnityEngine.UIElements;
 
 public class BuildModeManager : MonoBehaviour {
     public static BuildModeManager Instance { get; private set; }
@@ -40,27 +41,17 @@ public class BuildModeManager : MonoBehaviour {
     }
 
     private void Start() {
-        GameDataBase.Initialize("Human");
+        GameDataBase.Initialize("Orc");
+
     }
 
     private void Update()
     {
-        // ================================================================
-        // ★ [추가할 부분] 테스트용: B키 누르면 건설 모드 진입
-        // ================================================================
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            // "Barracks" 자리에 JSON 파일에 있는 실제 건물 ID를 적어야 합니다!
-            _ = StartBuildMode("Human_Barracks");
 
-            Debug.Log("[테스트] B키 눌림 -> 건설 모드 시작!");
-        }
-        // ================================================================
-
-        // [기존 코드] 빌드 모드가 아니면 아무것도 하지 않음
+        // 빌드 모드가 아니면 아무것도 하지 않음
         if (!IsInBuildMode) return;
 
-        // [기존 코드] 마우스 감지 및 클릭 처리
+        // 마우스 감지 및 클릭 처리
         HandleBuildInput();
     }
 
@@ -91,7 +82,7 @@ public class BuildModeManager : MonoBehaviour {
             if (!IsDataSelected) return;
 
             loadedPrefab = await ResourceManager.Instance.GetBuildingPrefab(id); // 건물 잔상 프리팹
-            constructionPrefab = await ResourceManager.Instance.GetBuildingPrefab("Human_Construction"); // 건설중 프리팹
+            constructionPrefab = await ResourceManager.Instance.GetBuildingPrefab("Orc_Construction"); // 건설중 프리팹
 
             if (loadedPrefab != null) { // 예외
                 CreateGhost(loadedPrefab);
@@ -141,11 +132,19 @@ public class BuildModeManager : MonoBehaviour {
         if (!validator.IsValid(pos, userName)) return;
 
         if (!PlayerResourcesManager.Instance.ConsumeResources(0, selectedData.Wood, selectedData.Rock)) return;
-
         isConfirming = true;
 
-        WorkerUnit worker = null;
 
+        // 테스트용, 유닛이 있으면 필요없음
+        Instantiate(constructionPrefab, pos, Quaternion.Euler(-90f, 0f, 0f));
+
+
+
+        // 테스트에 유닛이 필요함
+        /*
+        
+        WorkerUnit worker = null;
+      
         foreach (var unit in SelectedUnits.Instance._selectedList)
         {
             worker = unit.GetComponent<WorkerUnit>();
@@ -165,6 +164,7 @@ public class BuildModeManager : MonoBehaviour {
             isConfirming = false;
             return;
         }
+        */
 
         ClearMode();
         isConfirming = false;

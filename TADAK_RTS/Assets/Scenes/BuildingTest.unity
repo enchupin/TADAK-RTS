@@ -360,8 +360,8 @@ Transform:
   m_GameObject: {fileID: 630320358}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 37.50921, y: 2.0444376, z: 38.858925}
+  m_LocalPosition: {x: -0.0256, y: 0, z: 0}
+  m_LocalScale: {x: 37.456696, y: 2.0444376, z: 38.858925}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1117,10 +1117,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259e827196f203c449d69e51b5eb50f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectionManager
-  myPlayerID: Player1
   clickLayer:
     serializedVersion: 2
     m_Bits: 0
+  mapLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  selectionRenderer: {fileID: 0}
 --- !u!1001 &1942547533
 PrefabInstance:
   m_ObjectHideFlags: 0
