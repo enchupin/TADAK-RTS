@@ -87,17 +87,6 @@
             "AmountPerTick": 8
         },
         {
-            "ID": "Elf_ChimaeraRoost",
-            "Race": 1,
-            "Wood": 280,
-            "Rock": 350,
-            "MaxHealth": 1100.0,
-            "BuildTime": 42.0,
-            "ProducibleUnits": [],
-            "ResourceType": "",
-            "AmountPerTick": 0
-        },
-        {
             "ID": "Elf_Construction",
             "Race": 1,
             "Wood": 0,

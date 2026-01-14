@@ -87,17 +87,6 @@
             "AmountPerTick": 10
         },
         {
-            "ID": "Human_Cathedral",
-            "Race": 0,
-            "Wood": 300,
-            "Rock": 400,
-            "MaxHealth": 1200.0,
-            "BuildTime": 45.0,
-            "ProducibleUnits": [],
-            "ResourceType": "",
-            "AmountPerTick": 0
-        },
-        {
             "ID": "Human_Construction",
             "Race": 0,
             "Wood": 0,

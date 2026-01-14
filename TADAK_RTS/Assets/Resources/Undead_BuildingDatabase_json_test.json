@@ -87,17 +87,6 @@
             "AmountPerTick": 9
         },
         {
-            "ID": "Undead_AltarOfDarkness",
-            "Race": 3,
-            "Wood": 280,
-            "Rock": 420,
-            "MaxHealth": 1150.0,
-            "BuildTime": 44.0,
-            "ProducibleUnits": [],
-            "ResourceType": "",
-            "AmountPerTick": 0
-        },
-        {
             "ID": "Undead_Construction",
             "Race": 3,
             "Wood": 0,
