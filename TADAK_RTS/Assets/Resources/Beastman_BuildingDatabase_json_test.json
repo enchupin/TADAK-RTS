@@ -1,0 +1,112 @@
+{
+    "buildingDatabase_json": [
+        {
+            "ID": "Beastman_WarChief",
+            "Race": 2,
+            "Wood": 380,
+            "Rock": 350,
+            "MaxHealth": 2200.0,
+            "BuildTime": 58.0,
+            "ProducibleUnits": [
+                "Beastman_Worker"
+            ],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Beastman_BeastDen",
+            "Race": 2,
+            "Wood": 220,
+            "Rock": 90,
+            "MaxHealth": 850.0,
+            "BuildTime": 32.0,
+            "ProducibleUnits": [
+                "Beastman_Grunt",
+                "Beastman_Raider",
+                "Beastman_Shaman",
+                "Beastman_Tauren",
+                "Beastman_WyvernRider",
+                "Beastman_Berserker"
+            ],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Beastman_SpiritLodge",
+            "Race": 2,
+            "Wood": 160,
+            "Rock": 190,
+            "MaxHealth": 580.0,
+            "BuildTime": 26.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Beastman_Warmill",
+            "Race": 2,
+            "Wood": 190,
+            "Rock": 230,
+            "MaxHealth": 680.0,
+            "BuildTime": 29.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Beastman_Pigsty",
+            "Race": 2,
+            "Wood": 110,
+            "Rock": 45,
+            "MaxHealth": 420.0,
+            "BuildTime": 21.0,
+            "ProducibleUnits": [],
+            "ResourceType": "Wood",
+            "AmountPerTick": 11
+        },
+        {
+            "ID": "Beastman_Burrow",
+            "Race": 2,
+            "Wood": 55,
+            "Rock": 95,
+            "MaxHealth": 410.0,
+            "BuildTime": 21.0,
+            "ProducibleUnits": [],
+            "ResourceType": "Rock",
+            "AmountPerTick": 11
+        },
+        {
+            "ID": "Beastman_Pigfarm",
+            "Race": 2,
+            "Wood": 85,
+            "Rock": 35,
+            "MaxHealth": 320.0,
+            "BuildTime": 16.0,
+            "ProducibleUnits": [],
+            "ResourceType": "Food",
+            "AmountPerTick": 6
+        },
+        {
+            "ID": "Beastman_AltarOfStorms",
+            "Race": 2,
+            "Wood": 320,
+            "Rock": 380,
+            "MaxHealth": 1300.0,
+            "BuildTime": 48.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Beastman_Construction",
+            "Race": 2,
+            "Wood": 0,
+            "Rock": 0,
+            "MaxHealth": 100.0,
+            "BuildTime": 0.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        }
+    ]
+}

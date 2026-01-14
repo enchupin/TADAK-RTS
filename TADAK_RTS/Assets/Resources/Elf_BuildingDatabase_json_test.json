@@ -1,0 +1,112 @@
+{
+    "buildingDatabase_json": [
+        {
+            "ID": "Elf_TreeOfLife",
+            "Race": 1,
+            "Wood": 350,
+            "Rock": 300,
+            "MaxHealth": 1800.0,
+            "BuildTime": 55.0,
+            "ProducibleUnits": [
+                "Elf_Worker"
+            ],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Elf_WardenGrove",
+            "Race": 1,
+            "Wood": 180,
+            "Rock": 80,
+            "MaxHealth": 700.0,
+            "BuildTime": 28.0,
+            "ProducibleUnits": [
+                "Elf_Sentinel",
+                "Elf_Ranger",
+                "Elf_Bladedancer",
+                "Elf_Dryad",
+                "Elf_DruidOfClaw",
+                "Elf_Hippogryph"
+            ],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Elf_AncientOfWar",
+            "Race": 1,
+            "Wood": 140,
+            "Rock": 180,
+            "MaxHealth": 550.0,
+            "BuildTime": 24.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Elf_AncientOfLore",
+            "Race": 1,
+            "Wood": 180,
+            "Rock": 220,
+            "MaxHealth": 650.0,
+            "BuildTime": 28.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Elf_Entangle",
+            "Race": 1,
+            "Wood": 90,
+            "Rock": 40,
+            "MaxHealth": 350.0,
+            "BuildTime": 18.0,
+            "ProducibleUnits": [],
+            "ResourceType": "Wood",
+            "AmountPerTick": 12
+        },
+        {
+            "ID": "Elf_MoonWell",
+            "Race": 1,
+            "Wood": 70,
+            "Rock": 80,
+            "MaxHealth": 380.0,
+            "BuildTime": 18.0,
+            "ProducibleUnits": [],
+            "ResourceType": "Mana",
+            "AmountPerTick": 8
+        },
+        {
+            "ID": "Elf_WispGarden",
+            "Race": 1,
+            "Wood": 60,
+            "Rock": 30,
+            "MaxHealth": 280.0,
+            "BuildTime": 14.0,
+            "ProducibleUnits": [],
+            "ResourceType": "Food",
+            "AmountPerTick": 6
+        },
+        {
+            "ID": "Elf_ChimaeraRoost",
+            "Race": 1,
+            "Wood": 280,
+            "Rock": 350,
+            "MaxHealth": 1100.0,
+            "BuildTime": 42.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Elf_Construction",
+            "Race": 1,
+            "Wood": 0,
+            "Rock": 0,
+            "MaxHealth": 100.0,
+            "BuildTime": 0.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        }
+    ]
+}

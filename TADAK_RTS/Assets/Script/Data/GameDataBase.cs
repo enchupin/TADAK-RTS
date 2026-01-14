@@ -6,7 +6,8 @@ public static class DataManager {
     public const string UNIT_DATABASE = "UnitDatabase";
     public static T LoadJson<T>(string race, string dataType) where T : class {
         // ex) Human_Building_json, Human_Unit_json
-        string fileName = $"{race}_{dataType}_json";
+        // 테스트 용 데이터를 사용하기 위해 _test를 추가
+        string fileName = $"{race}_{dataType}_json_test";
         TextAsset jsonFile = Resources.Load<TextAsset>(fileName);
 
         if (jsonFile == null) {
