@@ -1,10 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
 /// 드래그 선택 영역의 시각적 렌더링을 담당
 /// </summary>
-public class SelectionRenderer : MonoBehaviour {
+public class DragRenderer : MonoBehaviour {
     private Texture2D selectionTexture;
     
     // 드래그 상태 (외부에서 설정)
