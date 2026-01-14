@@ -759,6 +759,10 @@ PrefabInstance:
       propertyPath: mapLayer.m_Bits
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 8129410870442075907, guid: 943731fcfb16d6b49953b53adf93b51e, type: 3}
+      propertyPath: useStandaloneMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
