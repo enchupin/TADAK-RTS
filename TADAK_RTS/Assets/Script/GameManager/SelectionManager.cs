@@ -32,7 +32,7 @@ public class SelectionManager : MonoBehaviour {
     // 단일 선택
     private void SingleSelect(Vector2 mousePos) {
         // 선택된 유닛 초기화
-        SelectedUnits.Instance.Clear();
+        SelectedUnits.Instance?.Clear();
 
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
         if (Physics.Raycast(ray, out RaycastHit entityHit, 1000f, clickLayer)) {
@@ -50,7 +50,7 @@ public class SelectionManager : MonoBehaviour {
     // 다중 선택 (유닛만 가능)
     private void DragSelect(Vector2 startPos, Vector2 endPos) {
         // 선택된 유닛 초기화
-        SelectedUnits.Instance.Clear();
+        SelectedUnits.Instance?.Clear();
 
         // 드래그 영역 생성
         Rect selectionRect = DragRenderer.GetDragRect(startPos, endPos);
@@ -65,7 +65,7 @@ public class SelectionManager : MonoBehaviour {
             // 선택된 유닛이 드래그 범위에 있는지 확인, 내꺼면 선택
             if (selectionRect.Contains(unitScreenPos) && IsOwnedByMe(unit)) {
                 // 선택된 유닛 데이터 추가
-                SelectedUnits.Instance.Add(unit);
+                SelectedUnits.Instance?.Add(unit);
             }
         }
 
@@ -86,10 +86,10 @@ public class SelectionManager : MonoBehaviour {
 
     // 우클릭 이동 명령
     private void HandleCommandInput() {
-        if (Mouse.current.rightButton.wasPressedThisFrame && SelectedUnits.Instance.Count > 0) {
+        if (Mouse.current.rightButton.wasPressedThisFrame && SelectedUnits.Instance != null && SelectedUnits.Instance.Count > 0) {
             Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
             if (Physics.Raycast(ray, out RaycastHit hit, 1000f, mapLayer)) {
-                SelectedUnits.Instance.ExecuteMove(hit.point);
+                SelectedUnits.Instance?.ExecuteMove(hit.point);
             }
         }
     }

@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1650038379051209697}
-  - component: {fileID: 3537162974511278734}
   - component: {fileID: 5176406335350508522}
+  - component: {fileID: 8129410870442075907}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: ClickManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,18 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3537162974511278734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323558875325418933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8e5c4f7fedae8446931efd163568c4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerStatsManager
 --- !u!114 &5176406335350508522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,5 +50,18 @@ MonoBehaviour:
     m_Bits: 0
   mapLayer:
     serializedVersion: 2
-    m_Bits: 0
-  selectionRenderer: {fileID: 0}
+    m_Bits: 64
+  selectionRenderer: {fileID: 8129410870442075907}
+--- !u!114 &8129410870442075907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323558875325418933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2558a124ada53f546b8dbc7d9cd4557e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DragRenderer
+  useStandaloneMode: 1
