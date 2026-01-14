@@ -54,6 +54,17 @@
             "AmountPerTick": 0
         },
         {
+            "ID": "Elf_AncientOfWind",
+            "Race": 1,
+            "Wood": 160,
+            "Rock": 200,
+            "MaxHealth": 600.0,
+            "BuildTime": 26.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
             "ID": "Elf_Entangle",
             "Race": 1,
             "Wood": 90,
@@ -74,17 +85,6 @@
             "ProducibleUnits": [],
             "ResourceType": "Mana",
             "AmountPerTick": 8
-        },
-        {
-            "ID": "Elf_WispGarden",
-            "Race": 1,
-            "Wood": 60,
-            "Rock": 30,
-            "MaxHealth": 280.0,
-            "BuildTime": 14.0,
-            "ProducibleUnits": [],
-            "ResourceType": "Food",
-            "AmountPerTick": 6
         },
         {
             "ID": "Elf_ChimaeraRoost",

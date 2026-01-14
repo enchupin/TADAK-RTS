@@ -54,6 +54,17 @@
             "AmountPerTick": 0
         },
         {
+            "ID": "Undead_Slaughterhouse",
+            "Race": 3,
+            "Wood": 150,
+            "Rock": 230,
+            "MaxHealth": 570.0,
+            "BuildTime": 26.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
             "ID": "Undead_HauntedMine",
             "Race": 3,
             "Wood": 80,
@@ -74,17 +85,6 @@
             "ProducibleUnits": [],
             "ResourceType": "Rock",
             "AmountPerTick": 9
-        },
-        {
-            "ID": "Undead_Ziggurat",
-            "Race": 3,
-            "Wood": 70,
-            "Rock": 50,
-            "MaxHealth": 260.0,
-            "BuildTime": 13.0,
-            "ProducibleUnits": [],
-            "ResourceType": "Food",
-            "AmountPerTick": 4
         },
         {
             "ID": "Undead_AltarOfDarkness",

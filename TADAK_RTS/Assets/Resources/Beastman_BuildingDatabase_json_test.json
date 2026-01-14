@@ -54,6 +54,17 @@
             "AmountPerTick": 0
         },
         {
+            "ID": "Beastman_TotemPole",
+            "Race": 2,
+            "Wood": 170,
+            "Rock": 210,
+            "MaxHealth": 620.0,
+            "BuildTime": 27.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
             "ID": "Beastman_Pigsty",
             "Race": 2,
             "Wood": 110,
@@ -74,17 +85,6 @@
             "ProducibleUnits": [],
             "ResourceType": "Rock",
             "AmountPerTick": 11
-        },
-        {
-            "ID": "Beastman_Pigfarm",
-            "Race": 2,
-            "Wood": 85,
-            "Rock": 35,
-            "MaxHealth": 320.0,
-            "BuildTime": 16.0,
-            "ProducibleUnits": [],
-            "ResourceType": "Food",
-            "AmountPerTick": 6
         },
         {
             "ID": "Beastman_AltarOfStorms",

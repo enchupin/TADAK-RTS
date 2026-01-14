@@ -54,6 +54,17 @@
             "AmountPerTick": 0
         },
         {
+            "ID": "Human_Workshop",
+            "Race": 0,
+            "Wood": 180,
+            "Rock": 220,
+            "MaxHealth": 650.0,
+            "BuildTime": 28.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
             "ID": "Human_Lumbermill",
             "Race": 0,
             "Wood": 100,
@@ -74,17 +85,6 @@
             "ProducibleUnits": [],
             "ResourceType": "Rock",
             "AmountPerTick": 10
-        },
-        {
-            "ID": "Human_Farm",
-            "Race": 0,
-            "Wood": 80,
-            "Rock": 40,
-            "MaxHealth": 300.0,
-            "BuildTime": 15.0,
-            "ProducibleUnits": [],
-            "ResourceType": "Food",
-            "AmountPerTick": 5
         },
         {
             "ID": "Human_Cathedral",
