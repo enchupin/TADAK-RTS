@@ -8,10 +8,9 @@ public class SelectionManager : MonoBehaviour {
     [Header("Settings")]
     [SerializeField] private LayerMask clickLayer; // 클릭 레이어
     [SerializeField] private LayerMask mapLayer;
+    [SerializeField] private SelectionRenderer selectionRenderer; // 드래그 UI 렌더러
     private string myPlayerID = "Player1"; // 현재 플레이어 ID
 
-
-    private Texture2D selectionTexture; // 드래그 범위
     private Vector2 mousePos; // 마우스 위치
     private bool isDragging = false; // 드래그 중인지 판별
 
@@ -20,8 +19,6 @@ public class SelectionManager : MonoBehaviour {
     private void Awake() {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-
-        InitializeDragTexture();
     }
 
     private void Update() {
@@ -56,7 +53,7 @@ public class SelectionManager : MonoBehaviour {
         SelectedUnits.Instance.Clear();
 
         // 드래그 영역 생성
-        Rect selectionRect = GetDragRect(startPos, endPos);
+        Rect selectionRect = SelectionRenderer.GetDragRect(startPos, endPos);
 
         // 맵 상의 모든 UnitController를 검사 (성능 최적화를 위해 추후 레이어 기반 Overlap으로 변경 예정)
         UnitController[] allUnits = Object.FindObjectsByType<UnitController>(FindObjectsSortMode.None);
@@ -110,13 +107,24 @@ public class SelectionManager : MonoBehaviour {
         if (Mouse.current.leftButton.wasPressedThisFrame) {
             mousePos = Mouse.current.position.ReadValue();
             isDragging = true;
+            
+            // SelectionRenderer에 드래그 상태 전달
+            if (selectionRenderer != null) {
+                selectionRenderer.StartMousePos = mousePos;
+                selectionRenderer.IsDragging = true;
+            }
         }
 
         // 선택 완료
         if (Mouse.current.leftButton.wasReleasedThisFrame) {
             isDragging = false;
-            Vector2 endMousePos = Mouse.current.position.ReadValue();
             
+            // SelectionRenderer 드래그 상태 해제
+            if (selectionRenderer != null) {
+                selectionRenderer.IsDragging = false;
+            }
+            
+            Vector2 endMousePos = Mouse.current.position.ReadValue();
 
             // 드래그 거리가 짧으면 단일 클릭으로 간주
             // 추후 테스트 후 삭제 고려
@@ -130,29 +138,7 @@ public class SelectionManager : MonoBehaviour {
         }
     }
 
-    // 드래그 범위 표시
-    private void OnGUI() {
-        if (isDragging) {
-            var rect = GetDragRect(mousePos, Mouse.current.position.ReadValue());
-            rect.y = Screen.height - rect.y - rect.height;
-            GUI.DrawTexture(rect, selectionTexture);
-        }
-    }
 
-    // 드래그 범위 표시를 위한 이미지 생성
-    private void InitializeDragTexture() {
-        selectionTexture = new Texture2D(1, 1);
-        Color32 fixedColor = new Color32(204, 204, 255, 77);
-        selectionTexture.SetPixel(0, 0, fixedColor);
-        selectionTexture.Apply();
-    }
-
-    // 드래그 영역Rect 생성
-    private Rect GetDragRect(Vector2 screenPos1, Vector2 screenPos2) {
-        var topLeft = Vector2.Min(screenPos1, screenPos2);
-        var bottomRight = Vector2.Max(screenPos1, screenPos2);
-        return Rect.MinMaxRect(topLeft.x, topLeft.y, bottomRight.x, bottomRight.y);
-    }
 
 
 }
