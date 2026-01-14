@@ -35,6 +35,7 @@ public struct UnitJsonData {
     public float AttackSpeed;
     public float AttackDamage;
     public float MaxHP;
+    public float ProductionTime; // 생산 시간 (초), 기본값 5초
 }
 
 [System.Serializable]
