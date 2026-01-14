@@ -1,0 +1,88 @@
+{
+    "unitDatabase_json": [
+        {
+            "ID": "Elf_Worker",
+            "Race": 1,
+            "CostWood": 45,
+            "CostRock": 0,
+            "CostFood": 1,
+            "MoveSpeed": 4.5,
+            "AttackSpeed": 1.0,
+            "AttackDamage": 4.0,
+            "MaxHP": 50.0,
+            "ProductionTime": 9.0
+        },
+        {
+            "ID": "Elf_Sentinel",
+            "Race": 1,
+            "CostWood": 70,
+            "CostRock": 30,
+            "CostFood": 1,
+            "MoveSpeed": 6.0,
+            "AttackSpeed": 1.4,
+            "AttackDamage": 16.0,
+            "MaxHP": 90.0,
+            "ProductionTime": 14.0
+        },
+        {
+            "ID": "Elf_Ranger",
+            "Race": 1,
+            "CostWood": 90,
+            "CostRock": 10,
+            "CostFood": 1,
+            "MoveSpeed": 6.5,
+            "AttackSpeed": 1.8,
+            "AttackDamage": 22.0,
+            "MaxHP": 70.0,
+            "ProductionTime": 16.0
+        },
+        {
+            "ID": "Elf_Bladedancer",
+            "Race": 1,
+            "CostWood": 50,
+            "CostRock": 80,
+            "CostFood": 2,
+            "MoveSpeed": 7.0,
+            "AttackSpeed": 2.0,
+            "AttackDamage": 14.0,
+            "MaxHP": 100.0,
+            "ProductionTime": 18.0
+        },
+        {
+            "ID": "Elf_Dryad",
+            "Race": 1,
+            "CostWood": 100,
+            "CostRock": 50,
+            "CostFood": 2,
+            "MoveSpeed": 5.5,
+            "AttackSpeed": 1.2,
+            "AttackDamage": 12.0,
+            "MaxHP": 85.0,
+            "ProductionTime": 20.0
+        },
+        {
+            "ID": "Elf_DruidOfClaw",
+            "Race": 1,
+            "CostWood": 80,
+            "CostRock": 100,
+            "CostFood": 3,
+            "MoveSpeed": 5.0,
+            "AttackSpeed": 1.0,
+            "AttackDamage": 28.0,
+            "MaxHP": 160.0,
+            "ProductionTime": 28.0
+        },
+        {
+            "ID": "Elf_Hippogryph",
+            "Race": 1,
+            "CostWood": 120,
+            "CostRock": 60,
+            "CostFood": 2,
+            "MoveSpeed": 9.0,
+            "AttackSpeed": 1.5,
+            "AttackDamage": 20.0,
+            "MaxHP": 110.0,
+            "ProductionTime": 22.0
+        }
+    ]
+}

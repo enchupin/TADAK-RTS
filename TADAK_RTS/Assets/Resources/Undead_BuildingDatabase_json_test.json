@@ -1,0 +1,101 @@
+{
+    "buildingDatabase_json": [
+        {
+            "ID": "Undead_Necropolis",
+            "Race": 3,
+            "Wood": 320,
+            "Rock": 450,
+            "MaxHealth": 1900.0,
+            "BuildTime": 62.0,
+            "ProducibleUnits": [
+                "Undead_Worker"
+            ],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Undead_Crypt",
+            "Race": 3,
+            "Wood": 180,
+            "Rock": 120,
+            "MaxHealth": 750.0,
+            "BuildTime": 30.0,
+            "ProducibleUnits": [
+                "Undead_Ghoul",
+                "Undead_Skeleton",
+                "Undead_Banshee",
+                "Undead_Abomination",
+                "Undead_Necromancer",
+                "Undead_FrostWyrm"
+            ],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Undead_GraveyardTech",
+            "Race": 3,
+            "Wood": 130,
+            "Rock": 210,
+            "MaxHealth": 520.0,
+            "BuildTime": 24.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Undead_TempleOfDamned",
+            "Race": 3,
+            "Wood": 170,
+            "Rock": 260,
+            "MaxHealth": 620.0,
+            "BuildTime": 28.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Undead_Slaughterhouse",
+            "Race": 3,
+            "Wood": 150,
+            "Rock": 230,
+            "MaxHealth": 570.0,
+            "BuildTime": 26.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Undead_HauntedMine",
+            "Race": 3,
+            "Wood": 80,
+            "Rock": 60,
+            "MaxHealth": 360.0,
+            "BuildTime": 19.0,
+            "ProducibleUnits": [],
+            "ResourceType": "Wood",
+            "AmountPerTick": 9
+        },
+        {
+            "ID": "Undead_Boneyard",
+            "Race": 3,
+            "Wood": 40,
+            "Rock": 110,
+            "MaxHealth": 380.0,
+            "BuildTime": 19.0,
+            "ProducibleUnits": [],
+            "ResourceType": "Rock",
+            "AmountPerTick": 9
+        },
+        {
+            "ID": "Undead_Construction",
+            "Race": 3,
+            "Wood": 0,
+            "Rock": 0,
+            "MaxHealth": 100.0,
+            "BuildTime": 0.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        }
+    ]
+}

@@ -1,0 +1,101 @@
+{
+    "buildingDatabase_json": [
+        {
+            "ID": "Human_Headquarters",
+            "Race": 0,
+            "Wood": 400,
+            "Rock": 400,
+            "MaxHealth": 2000.0,
+            "BuildTime": 60.0,
+            "ProducibleUnits": [
+                "Human_Worker"
+            ],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Human_Barracks",
+            "Race": 0,
+            "Wood": 200,
+            "Rock": 100,
+            "MaxHealth": 800.0,
+            "BuildTime": 30.0,
+            "ProducibleUnits": [
+                "Human_Knight",
+                "Human_Archer",
+                "Human_Spearman",
+                "Human_Cavalry",
+                "Human_Mage",
+                "Human_Healer"
+            ],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Human_Blacksmith",
+            "Race": 0,
+            "Wood": 150,
+            "Rock": 200,
+            "MaxHealth": 600.0,
+            "BuildTime": 25.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Human_Academy",
+            "Race": 0,
+            "Wood": 200,
+            "Rock": 250,
+            "MaxHealth": 700.0,
+            "BuildTime": 30.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Human_Workshop",
+            "Race": 0,
+            "Wood": 180,
+            "Rock": 220,
+            "MaxHealth": 650.0,
+            "BuildTime": 28.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        },
+        {
+            "ID": "Human_Lumbermill",
+            "Race": 0,
+            "Wood": 100,
+            "Rock": 50,
+            "MaxHealth": 400.0,
+            "BuildTime": 20.0,
+            "ProducibleUnits": [],
+            "ResourceType": "Wood",
+            "AmountPerTick": 10
+        },
+        {
+            "ID": "Human_Quarry",
+            "Race": 0,
+            "Wood": 50,
+            "Rock": 100,
+            "MaxHealth": 400.0,
+            "BuildTime": 20.0,
+            "ProducibleUnits": [],
+            "ResourceType": "Rock",
+            "AmountPerTick": 10
+        },
+        {
+            "ID": "Human_Construction",
+            "Race": 0,
+            "Wood": 0,
+            "Rock": 0,
+            "MaxHealth": 100.0,
+            "BuildTime": 0.0,
+            "ProducibleUnits": [],
+            "ResourceType": "",
+            "AmountPerTick": 0
+        }
+    ]
+}

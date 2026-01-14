@@ -1,0 +1,88 @@
+{
+    "unitDatabase_json": [
+        {
+            "ID": "Undead_Worker",
+            "Race": 3,
+            "CostWood": 45,
+            "CostRock": 10,
+            "CostFood": 1,
+            "MoveSpeed": 3.5,
+            "AttackSpeed": 1.0,
+            "AttackDamage": 4.0,
+            "MaxHP": 55.0,
+            "ProductionTime": 12.0
+        },
+        {
+            "ID": "Undead_Ghoul",
+            "Race": 3,
+            "CostWood": 40,
+            "CostRock": 30,
+            "CostFood": 1,
+            "MoveSpeed": 6.5,
+            "AttackSpeed": 1.6,
+            "AttackDamage": 12.0,
+            "MaxHP": 75.0,
+            "ProductionTime": 12.0
+        },
+        {
+            "ID": "Undead_Skeleton",
+            "Race": 3,
+            "CostWood": 30,
+            "CostRock": 20,
+            "CostFood": 1,
+            "MoveSpeed": 5.0,
+            "AttackSpeed": 1.2,
+            "AttackDamage": 10.0,
+            "MaxHP": 50.0,
+            "ProductionTime": 8.0
+        },
+        {
+            "ID": "Undead_Banshee",
+            "Race": 3,
+            "CostWood": 100,
+            "CostRock": 60,
+            "CostFood": 2,
+            "MoveSpeed": 5.5,
+            "AttackSpeed": 1.0,
+            "AttackDamage": 18.0,
+            "MaxHP": 60.0,
+            "ProductionTime": 24.0
+        },
+        {
+            "ID": "Undead_Abomination",
+            "Race": 3,
+            "CostWood": 60,
+            "CostRock": 160,
+            "CostFood": 4,
+            "MoveSpeed": 3.0,
+            "AttackSpeed": 0.6,
+            "AttackDamage": 45.0,
+            "MaxHP": 320.0,
+            "ProductionTime": 38.0
+        },
+        {
+            "ID": "Undead_Necromancer",
+            "Race": 3,
+            "CostWood": 110,
+            "CostRock": 90,
+            "CostFood": 2,
+            "MoveSpeed": 4.0,
+            "AttackSpeed": 0.8,
+            "AttackDamage": 32.0,
+            "MaxHP": 55.0,
+            "ProductionTime": 30.0
+        },
+        {
+            "ID": "Undead_FrostWyrm",
+            "Race": 3,
+            "CostWood": 180,
+            "CostRock": 200,
+            "CostFood": 5,
+            "MoveSpeed": 7.0,
+            "AttackSpeed": 0.5,
+            "AttackDamage": 60.0,
+            "MaxHP": 250.0,
+            "ProductionTime": 45.0
+        }
+    ]
+}

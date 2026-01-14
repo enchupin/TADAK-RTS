@@ -1,0 +1,88 @@
+{
+    "unitDatabase_json": [
+        {
+            "ID": "Human_Worker",
+            "Race": 0,
+            "CostWood": 50,
+            "CostRock": 0,
+            "CostFood": 1,
+            "MoveSpeed": 4.0,
+            "AttackSpeed": 1.0,
+            "AttackDamage": 5.0,
+            "MaxHP": 60.0,
+            "ProductionTime": 10.0
+        },
+        {
+            "ID": "Human_Knight",
+            "Race": 0,
+            "CostWood": 0,
+            "CostRock": 100,
+            "CostFood": 2,
+            "MoveSpeed": 5.0,
+            "AttackSpeed": 1.2,
+            "AttackDamage": 25.0,
+            "MaxHP": 150.0,
+            "ProductionTime": 20.0
+        },
+        {
+            "ID": "Human_Archer",
+            "Race": 0,
+            "CostWood": 80,
+            "CostRock": 20,
+            "CostFood": 1,
+            "MoveSpeed": 5.5,
+            "AttackSpeed": 1.5,
+            "AttackDamage": 18.0,
+            "MaxHP": 80.0,
+            "ProductionTime": 15.0
+        },
+        {
+            "ID": "Human_Spearman",
+            "Race": 0,
+            "CostWood": 60,
+            "CostRock": 40,
+            "CostFood": 1,
+            "MoveSpeed": 5.0,
+            "AttackSpeed": 1.0,
+            "AttackDamage": 20.0,
+            "MaxHP": 120.0,
+            "ProductionTime": 18.0
+        },
+        {
+            "ID": "Human_Cavalry",
+            "Race": 0,
+            "CostWood": 50,
+            "CostRock": 150,
+            "CostFood": 3,
+            "MoveSpeed": 8.0,
+            "AttackSpeed": 1.3,
+            "AttackDamage": 30.0,
+            "MaxHP": 180.0,
+            "ProductionTime": 25.0
+        },
+        {
+            "ID": "Human_Mage",
+            "Race": 0,
+            "CostWood": 100,
+            "CostRock": 80,
+            "CostFood": 2,
+            "MoveSpeed": 4.0,
+            "AttackSpeed": 0.8,
+            "AttackDamage": 40.0,
+            "MaxHP": 70.0,
+            "ProductionTime": 30.0
+        },
+        {
+            "ID": "Human_Healer",
+            "Race": 0,
+            "CostWood": 80,
+            "CostRock": 60,
+            "CostFood": 2,
+            "MoveSpeed": 4.5,
+            "AttackSpeed": 1.0,
+            "AttackDamage": 8.0,
+            "MaxHP": 60.0,
+            "ProductionTime": 25.0
+        }
+    ]
+}

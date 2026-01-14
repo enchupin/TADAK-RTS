@@ -1,0 +1,88 @@
+{
+    "unitDatabase_json": [
+        {
+            "ID": "Beastman_Worker",
+            "Race": 2,
+            "CostWood": 55,
+            "CostRock": 0,
+            "CostFood": 1,
+            "MoveSpeed": 3.8,
+            "AttackSpeed": 1.0,
+            "AttackDamage": 6.0,
+            "MaxHP": 70.0,
+            "ProductionTime": 11.0
+        },
+        {
+            "ID": "Beastman_Grunt",
+            "Race": 2,
+            "CostWood": 60,
+            "CostRock": 50,
+            "CostFood": 2,
+            "MoveSpeed": 4.5,
+            "AttackSpeed": 1.1,
+            "AttackDamage": 22.0,
+            "MaxHP": 140.0,
+            "ProductionTime": 18.0
+        },
+        {
+            "ID": "Beastman_Raider",
+            "Race": 2,
+            "CostWood": 70,
+            "CostRock": 120,
+            "CostFood": 3,
+            "MoveSpeed": 7.5,
+            "AttackSpeed": 1.3,
+            "AttackDamage": 26.0,
+            "MaxHP": 160.0,
+            "ProductionTime": 24.0
+        },
+        {
+            "ID": "Beastman_Shaman",
+            "Race": 2,
+            "CostWood": 90,
+            "CostRock": 70,
+            "CostFood": 2,
+            "MoveSpeed": 4.0,
+            "AttackSpeed": 0.9,
+            "AttackDamage": 35.0,
+            "MaxHP": 65.0,
+            "ProductionTime": 28.0
+        },
+        {
+            "ID": "Beastman_Tauren",
+            "Race": 2,
+            "CostWood": 80,
+            "CostRock": 180,
+            "CostFood": 4,
+            "MoveSpeed": 3.5,
+            "AttackSpeed": 0.7,
+            "AttackDamage": 50.0,
+            "MaxHP": 280.0,
+            "ProductionTime": 35.0
+        },
+        {
+            "ID": "Beastman_WyvernRider",
+            "Race": 2,
+            "CostWood": 140,
+            "CostRock": 80,
+            "CostFood": 3,
+            "MoveSpeed": 8.5,
+            "AttackSpeed": 1.4,
+            "AttackDamage": 24.0,
+            "MaxHP": 130.0,
+            "ProductionTime": 26.0
+        },
+        {
+            "ID": "Beastman_Berserker",
+            "Race": 2,
+            "CostWood": 40,
+            "CostRock": 90,
+            "CostFood": 2,
+            "MoveSpeed": 6.0,
+            "AttackSpeed": 2.2,
+            "AttackDamage": 18.0,
+            "MaxHP": 100.0,
+            "ProductionTime": 20.0
+        }
+    ]
+}
