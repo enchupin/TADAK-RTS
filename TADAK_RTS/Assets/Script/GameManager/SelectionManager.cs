@@ -8,7 +8,7 @@ public class SelectionManager : MonoBehaviour {
     [Header("Settings")]
     [SerializeField] private LayerMask clickLayer; // 클릭 레이어
     [SerializeField] private LayerMask mapLayer;
-    [SerializeField] private SelectionRenderer selectionRenderer; // 드래그 UI 렌더러
+    [SerializeField] private DragRenderer selectionRenderer; // 드래그 UI 렌더러
     private string myPlayerID = "Player1"; // 현재 플레이어 ID
 
     private Vector2 mousePos; // 마우스 위치
@@ -53,7 +53,7 @@ public class SelectionManager : MonoBehaviour {
         SelectedUnits.Instance.Clear();
 
         // 드래그 영역 생성
-        Rect selectionRect = SelectionRenderer.GetDragRect(startPos, endPos);
+        Rect selectionRect = DragRenderer.GetDragRect(startPos, endPos);
 
         // 맵 상의 모든 UnitController를 검사 (성능 최적화를 위해 추후 레이어 기반 Overlap으로 변경 예정)
         UnitController[] allUnits = Object.FindObjectsByType<UnitController>(FindObjectsSortMode.None);

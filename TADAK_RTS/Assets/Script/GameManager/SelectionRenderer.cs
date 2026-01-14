@@ -16,7 +16,7 @@ public class SelectionRenderer : MonoBehaviour {
     }
 
     /// <summary>
-    /// 드래그 범위를 화면에 표시
+    /// 드래그 범위 화면 표시
     /// </summary>
     private void OnGUI() {
         if (IsDragging) {
