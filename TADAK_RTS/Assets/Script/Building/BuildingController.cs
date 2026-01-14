@@ -16,8 +16,13 @@ public class BuildingController : MonoBehaviour, ISelectable
     public string BuildingID => buildingID;
 
     protected virtual void Start() {
-        // 데이터베이스 초기화 (이미 초기화되어 있으면 무시됨)
+        // DB 초기화가 안된 상황에 대한 방어 코드 (이미 초기화되어 있으면 무시됨)
         GameDataBase.Initialize("Human");
+        
+        // buildingID가 비어있으면 GameObject 이름에서 자동 추출
+        if (string.IsNullOrEmpty(buildingID)) {
+            buildingID = gameObject.name.Replace("(Clone)", "").Trim();
+        }
         
         // 건물 데이터 로드
         if (!string.IsNullOrEmpty(buildingID)) {
