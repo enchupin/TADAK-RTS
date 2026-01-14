@@ -25,8 +25,6 @@ public class UnitController : MonoBehaviour, ISelectable
     // ★ [테스트용] 게임 시작하자마자 스스로 데이터를 로드함!
     private void Start()
     {
-        // 1. 혹시 DB가 초기화 안 됐을까봐 방어 코드 (이미 GameManager에서 하면 생략 가능)
-        GameDataBase.Initialize("Human");
 
         // 2. DB에서 데이터 가져오기
         UnitJsonData data = GameDataBase.GetUnit(testUnitID);
