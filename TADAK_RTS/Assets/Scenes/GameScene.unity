@@ -1117,10 +1117,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259e827196f203c449d69e51b5eb50f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectionManager
-  myPlayerID: Player1
   clickLayer:
     serializedVersion: 2
     m_Bits: 0
+  mapLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  selectionRenderer: {fileID: 0}
 --- !u!1001 &1942547533
 PrefabInstance:
   m_ObjectHideFlags: 0
